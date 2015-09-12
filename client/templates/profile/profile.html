@@ -1,0 +1,173 @@
+<template name="profile">
+	<div class="container">
+		<h1>Welcome</h1>
+        <div class="row">
+        	 <div class="col-md-6">
+            <h2>Your Profile</h2>
+            <div class="panel panel-default">
+  			<div class="panel-body">
+    			<div class="col-md-6">
+
+               
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Upload a new Profile Photo</h4>
+                      </div>
+                    <div class="modal-body">
+
+                      <input type="file" name="photo" class="myFileInput">
+                      <br>
+                     
+                      <button id="uploadPhoto" type="button" class="btn btn-info">Upload</button>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                  
+                
+              		<img id="profile-img" src="{{getImage}}" alt="profile-picture" width="170" height="250">
+                
+              		<br><br>
+              		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                  Upload Photo
+                  </button>
+                  
+
+          	  	</div>
+          	  	<div class="col-md-6">
+
+                  <!-- Modal -->
+                    <div class="modal fade" id="userInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Your Information</h4>
+                          </div>
+                        <div class="modal-body">
+
+                          <div class="form-group">
+                           
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <br>
+                            <input type="text" class="form-control" id="school" placeholder="School">
+                            <br>
+                            <input type="text" class="form-control" id="major" placeholder="Major">
+                            <br>
+                            <input type="text" class="form-control" id="year" placeholder="Year">
+                            <br>
+                            <input type="text" class="form-control" id="favoritePlace" placeholder="Favorite Place on Campus">
+                            <br>
+                            <input type="text" class="form-control" id="favoritePart" placeholder="Favorite Part About Life">
+                          </div>
+                         
+                          <button id="uploadInfo" type="button" class="btn btn-info">Submit</button>
+
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+            	
+              		<div id="name">
+              			<b>Name: </b>{{getName}}
+              		</div>
+              		<br>
+              		<div id="school">
+              			<b>School: </b>{{getSchool}}
+              		</div>
+              		<br>
+              		<div id="major">
+              			<b>Major: </b>{{getMajor}}
+              		</div>
+              		<br>
+              		<div id="year">
+              			<b>Year: </b>{{getYear}}
+              		</div>
+              		<br>
+              		<div id="place">
+              			<b>Favorite Place on Campus: </b>{{getFavoritePlace}} 
+              		</div>
+              		<br>
+              		<div id="place">
+              			<b>Favorite Part About Life: </b>{{getFavoritePart}}
+              		</div>
+              		<br>
+              		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#userInfo">Change Profile Information </button>
+
+
+          	  	</div>
+          	  	
+          	</div>	
+  			</div>
+		</div>
+		<div class="col-md-6">
+            <h2>Your Life</h2> 
+
+            <div class="panel panel-default">
+  				<div class="panel-body">
+
+  					<ul class="list-group">
+					  <li class="list-group-item list-group-item-success">2015: Launched ourLife v-1.0</li>
+					  <li class="list-group-item list-group-item-info">2014: Started graduate school at GWU</li>
+					  <li class="list-group-item list-group-item-warning">2010: Started college at Rutgers University</li>
+					  <li class="list-group-item list-group-item-danger">1992: Birth</li>
+					</ul>
+
+					<button type="button" class="btn btn-info">Change Major Life Events</button>
+  				</div>
+
+  			</div>
+
+        </div>  
+        </div>
+
+       	<div class="row">
+        	<div class="col-md-6">
+            	<h2>Your Ratings</h2>
+            	<div class="panel panel-default">
+  					<div class="panel-body">
+  						<table class="table table-striped">
+  							<thead>
+ 							<tr>
+ 								<td>Number</td>
+ 								<td>Menu</td>
+ 								<td>Rating</td>
+ 								<td></td>
+ 							</tr>
+ 							</thead>
+ 							<tbody>
+ 							<tr>
+ 								<td>1</td>
+ 								<td>School</td>
+ 								<td>Very good</td>
+ 								<td>See more</td>
+ 							</tr>
+ 							</tbody>
+						</table>
+  					</div>
+  				</div>
+		  	</div>
+			<div class="col-md-6">
+            	<h2>Your Dashboard</h2>
+            		<div class="panel panel-default">
+  						<div class="panel-body">
+  							<button type="button" class="btn btn-info">Share a Rating</button>
+  							<button type="button" class="btn btn-info">Challenge Someone</button>
+  							<button type="button" class="btn btn-info">Recommend Someone</button>
+  						</div>
+  					</div> 
+
+        	</div>  
+        </div>
+	</div>
+</template>

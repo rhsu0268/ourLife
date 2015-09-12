@@ -1,0 +1,19 @@
+<template name="schoolItemPage">
+	<div class="container">
+	   <div class="school-item-page page">
+	   	  <button type="button" class="btn btn-warning" id="back" style="float: right;">Go Back</button>
+	   	  <br>
+	      {{> schoolItem}}
+	   </div>
+	   <div>
+	   	{{#each schoolratings}}
+	   		<div class="panel panel-default">
+	  			<div class="panel-body">
+	    			{{idFromHelper}}: {{category}}: {{rating}}
+	  			</div>
+	  			<div class="panel-footer"> 	{{comment}}</div>
+			</div>
+	    {{/each}}
+	   </div>
+	</div>
+</template>

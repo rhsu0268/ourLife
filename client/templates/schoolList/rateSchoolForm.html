@@ -1,0 +1,48 @@
+<template name="rateSchoolForm">
+	<form>
+		<div class="form-group">
+			<label for="school">School</label>
+				<select class="form-control" id="school">
+				<option value=""></option>
+				<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>
+				<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>
+				<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>
+				<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>
+				<option value="GW Law">GW Law</option>
+				<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>
+				<option value="School of Business">School of Business</option>
+				<option value="Milken School of Public Health">Milken School of Public Health</option>
+				<option value="College of Professional Studies">College of Professional Studies</option>
+				<option value="School of Nursing">School of Nursing</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="category">What would you like to comment about?</label>
+			<select class="form-control" id="category">
+				<option value=""></option>
+				<option value="General">General</option>
+				<option value="Support">Support</option>
+				<option value="Faculty">Faculty</option>
+				<option value="Course">Course</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">How many stars would you like to give it?</label>
+			<select class="form-control" id="rating">
+				<option value=""></option>
+				<option value="1">&#9734;</option>
+				<option value="2">&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;&#9734;</option>
+				<option value="5">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">Comment</label>
+			<textarea class="form-control" style="height:80px;" id="comment">
+			</textarea>
+		</div>
+		<input type="submit" value="Submit" class="btn btn-primary"/>
+		
+	</form>
+</template>

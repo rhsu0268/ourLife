@@ -1,0 +1,58 @@
+<template name="rateHousingForm">
+	<form>
+		<div class="form-group">
+			<label for="school">Housing</label>
+				<select class="form-control" id="housing">
+				<option value=""></option>
+				<option value="1959 E Street">1959 E Street</option>
+				<option value="2109 F Street">2109 F Street</option>
+				<option value="2206 F Street">2206 F Street</option>
+				<option value="Amsterdam Hall">Amsterdam Hall</option>
+				<option value="Building JJ">Building JJ</option>
+				<option value="City Hall">City Hall</option>
+				<option value="Francis Scott Key Hall">Francis Scott Key Hall</option>
+				<option value="Fulbright Hall">Fulbright Hall</option>
+				<option value="Guthridge Hall">Guthridge Hall</option>
+				<option value="International House">JBKO Hall</option>
+				<option value="Lafayette Hall">Lafayette Hall</option>
+				<option value="Madison Hall">Madison Hall</option>
+				<option value="Mitchell Hall">Mitchell Hall</option>
+				<option value="Mitchell Hall">Munson Hall</option>
+				<option value="Mitchell Hall">Potomac House</option>
+				<option value="Mitchell Hall">Shenkman Hall</option>
+				<option value="Mitchell Hall">South Hall</option>
+				<option value="Mitchell Hall">Strong Hall</option>
+				<option value="Mitchell Hall">The Dakota</option>
+				<option value="Mitchell Hall">Thurston Hall</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="category">What would you like to comment about?</label>
+			<select class="form-control" id="category">
+				<option value=""></option>
+				<option value="General">General</option>
+				<option value="Shipping and Storage">Shipping and Storage</option>
+				<option value="Services">Services</option>
+				<option value="Atmosphere">Atmosphere</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">How many stars would you like to give it?</label>
+			<select class="form-control" id="rating">
+				<option value=""></option>
+				<option value="1">&#9734;</option>
+				<option value="2">&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;&#9734;</option>
+				<option value="5">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">Comment</label>
+			<textarea class="form-control" style="height:80px;" id="comment">
+			</textarea>
+		</div>
+		<input type="submit" value="Submit" class="btn btn-primary"/>
+		
+	</form>
+</template>
