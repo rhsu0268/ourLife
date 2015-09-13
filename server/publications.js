@@ -1,4 +1,6 @@
-
+Meteor.publish(null, function() {
+  return Meteor.users.find(this.userId, {fields: {timeline: 1}});
+});
 
 Meteor.publish('schools', function() 
 {

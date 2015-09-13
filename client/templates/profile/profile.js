@@ -95,6 +95,33 @@ Template.profile.events({
 				return alert(error.reason);
 			}
 		});
+	}, 
+	'click #uploadEvent': function(event, template)
+	{
+		event.preventDefault();
+		console.log("You clicked add Event!");
+
+		$('#timeLine').modal('toggle');
+
+		var userId = Meteor.userId();
+		console.log(userId);
+		var user = Meteor.users.findOne(userId);
+
+		var eventInfo = {
+			"year": $('#eventYear').val(),
+			"event": $('#event').val()
+		};
+
+		Meteor.call('eventInsert', eventInfo, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+		});
+
+
 	}
 
 });

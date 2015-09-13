@@ -113,17 +113,45 @@
 		<div class="col-md-6">
             <h2>Your Life</h2> 
 
+
+             <!-- Modal -->
+              <div class="modal fade" id="timeLine" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Your TimeLine</h4>
+                    </div>
+                  <div class="modal-body">
+
+                    <div class="form-group">
+                     
+                      <input type="text" class="form-control" id="eventYear" placeholder="Event Year">
+                      <br>
+                      <input type="text" class="form-control" id="event" placeholder="Event">
+                    
+                    </div>
+                   
+                    <button id="uploadEvent" type="button" class="btn btn-info">Add Event</button>
+
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+                </div>
+              </div>
+
             <div class="panel panel-default">
   				<div class="panel-body">
 
-  					<ul class="list-group">
+  				<ul class="list-group">
 					  <li class="list-group-item list-group-item-success">2015: Launched ourLife v-1.0</li>
 					  <li class="list-group-item list-group-item-info">2014: Started graduate school at GWU</li>
 					  <li class="list-group-item list-group-item-warning">2010: Started college at Rutgers University</li>
 					  <li class="list-group-item list-group-item-danger">1992: Birth</li>
 					</ul>
 
-					<button type="button" class="btn btn-info">Change Major Life Events</button>
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#timeLine">Change Major Life Events</button>
   				</div>
 
   			</div>

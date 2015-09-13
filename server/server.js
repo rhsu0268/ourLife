@@ -27,3 +27,14 @@ Images.allow({
  		return true;
  	}
 });
+
+Accounts.onCreateUser(function(options, user) {
+
+  	user.timeline = [];
+
+  	if (options.profile)
+    user.profile = options.profile;
+  	
+  	
+  	return user;
+});

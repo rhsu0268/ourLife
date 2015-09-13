@@ -5,3 +5,4 @@ Meteor.subscribe('housings');
 Meteor.subscribe('dininglocations');
 Meteor.subscribe('librarylocations');
 Meteor.subscribe('studentlifelocations');
+
