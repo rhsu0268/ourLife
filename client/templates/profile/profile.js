@@ -127,6 +127,7 @@ Template.profile.events({
 
 	}
 
+
 });
 
 Template.profile.helpers({
@@ -266,5 +267,14 @@ Template.profile.rendered = function()
 			timelineSection.append("<li class='list-group-item list-group-item-danger'>" + events[i].year + ": " + events[i].event + "</li>");
 		}
 	}
+
+	var userSchoolRatings = SchoolRatings.find( {userId: Meteor.userId()} ).fetch();
+
+
+	for (var i = 0; i < userSchoolRatings.length; i++)
+	{
+		$('#userRatings').append("<tr><td>" + userSchoolRatings[i].school + "</td><td>" + userSchoolRatings[i].category + "</td><td>" + userSchoolRatings[i].rating + "</td><td>" + userSchoolRatings[i].comment + "</td></tr>");
+	}
+
 }
 
