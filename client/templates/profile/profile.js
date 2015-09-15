@@ -119,6 +119,9 @@ Template.profile.events({
 				return alert(error.reason);
 			}
 
+		var timelineSection = $("#events ul");
+		timelineSection.append("<li class='list-group-item'>" + eventInfo.year + ": " + eventInfo.event + "</li>");
+
 		});
 
 
@@ -220,8 +223,48 @@ Template.profile.helpers({
 			return "N/A";
 		}
 
+	},
+	'getTimeline': function()
+	{
+		
+		var timelineSection = $("#events ul");
+		timelineSection.append("hello");
 	}
 
 
 });
+
+Template.profile.rendered = function()
+{
+	var user = Meteor.users.findOne(Meteor.userId());
+	console.log(user.timeline);
+
+	var events = user.timeline;
+
+	if (events.length == 0)
+	{
+		return;
+	}
+	var timelineSection = $("#events ul");
+
+	for (var i = 0; i < events.length; i++)
+	{
+		if (i % 4 == 0)
+		{
+			timelineSection.append("<li class='list-group-item list-group-item-success'>" + events[i].year + ": " + events[i].event + "</li>");
+		}
+		else if (i % 4 == 1)
+		{
+			timelineSection.append("<li class='list-group-item list-group-item-info'>" + events[i].year + ": " + events[i].event + "</li>");
+		}
+		else if (i % 4 == 2)
+		{
+			timelineSection.append("<li class='list-group-item list-group-item-warning'>" + events[i].year + ": " + events[i].event + "</li>");
+		}
+		else 
+		{
+			timelineSection.append("<li class='list-group-item list-group-item-danger'>" + events[i].year + ": " + events[i].event + "</li>");
+		}
+	}
+}
 
