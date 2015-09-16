@@ -126,7 +126,12 @@ Template.profile.events({
 
 
 	}
-
+	/*
+	'click .userRatings': function()
+	{
+		console.log("you clicked.");
+	}
+	*/
 
 });
 
@@ -273,8 +278,31 @@ Template.profile.rendered = function()
 
 	for (var i = 0; i < userSchoolRatings.length; i++)
 	{
-		$('#userRatings').append("<tr><td>" + userSchoolRatings[i].school + "</td><td>" + userSchoolRatings[i].category + "</td><td>" + userSchoolRatings[i].rating + "</td><td>" + userSchoolRatings[i].comment + "</td></tr>");
+		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[i].school + "</td><td class='category'>" + userSchoolRatings[i].category + "</td><td class='rating'>" + userSchoolRatings[i].rating + "</td><td class='comment'>" + userSchoolRatings[i].comment + "</td></tr>");
 	}
+
+	$('#userRatings').on('click', 'tbody tr', function(event) {
+
+		console.log("CLICKED");
+		$(this).addClass('highlight').siblings().removeClass('highlight');
+
+		var ratingItem = {
+
+			location: $(this).find(".location").html(),
+			category: $(this).find(".category").html(),
+			rating: $(this).find(".rating").html(),
+			comment: $(this).find(".comment").html()
+
+		};
+
+		//console.log(ratingItem);
+
+		Session.set('selectedRating', ratingItem);
+		var selectedRating = Session.get('selectedRating');
+		//console.log(selectedRating);
+		
+
+	});
 
 }
 
