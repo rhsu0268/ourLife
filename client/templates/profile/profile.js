@@ -284,7 +284,13 @@ Template.profile.rendered = function()
 	$('#userRatings').on('click', 'tbody tr', function(event) {
 
 		console.log("CLICKED");
+
+		$(".selected").remove();
+
+		//$('.userRatings').siblings().remove(".btn");
 		$(this).addClass('highlight').siblings().removeClass('highlight');
+
+		$(this).append("<td class='selected'><button type='button' class='btn btn-info share' data-toggle='modal' data-target='#shareRating'>Share</button></td>");
 
 		var ratingItem = {
 
