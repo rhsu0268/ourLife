@@ -235,6 +235,27 @@ Template.profile.helpers({
 		
 		var timelineSection = $("#events ul");
 		timelineSection.append("hello");
+	},
+	'getRatingLocation': function()
+	{
+		var rating = Session.get('selectedRating');
+		return rating.location;
+
+	},
+	'getRatingCategory': function()
+	{
+		var rating = Session.get('selectedRating');
+		return rating.category;
+	},
+	'getRatingRating': function()
+	{
+		var rating = Session.get('selectedRating');
+		return rating.rating;
+	},
+	'getRatingComment': function()
+	{
+		var rating = Session.get('selectedRating');
+		return rating.comment;
 	}
 
 
@@ -304,7 +325,7 @@ Template.profile.rendered = function()
 		//console.log(ratingItem);
 
 		Session.set('selectedRating', ratingItem);
-		var selectedRating = Session.get('selectedRating');
+		//var selectedRating = Session.get('selectedRating');
 		//console.log(selectedRating);
 		
 

@@ -191,10 +191,16 @@
                             <div class="modal-body">
 
                                 <div class="form-group">
+                                    <ul class="list-group" id="ratingInfo">
+                                        <li class="list-group-item">Location: {{getRatingLocation}}</li>
+                                        <li class="list-group-item">Category: {{getRatingCategory}}</li>
+                                        <li class="list-group-item">Rating: {{getRatingRating}}</li>
+                                        <li class="list-group-item">Comment: {{getRatingComment}}</li>
+                                    </ul>
 
-                                    <input type="text" class="form-control" id="eventYear" placeholder="Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Name">
                                     <br>
-                                    <input type="email" class="form-control" id="event" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
 
                                 </div>
 
