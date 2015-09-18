@@ -125,13 +125,30 @@ Template.profile.events({
 		});
 
 
-	}
-	/*
-	'click .userRatings': function()
+	},
+	'click #sendEmail': function()
 	{
-		console.log("you clicked.");
+		console.log("you clicked email.");
+
+		var recipientEmail = $('#recipientEmail').val();
+		console.log(recipientEmail);
+		var userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
+		console.log(userEmail);
+
+		var messageTitle = "A friend has just shared a rating with you!";
+		var message ="Hello world";
+
+		// call sendEmail method
+
+		Meteor.call('sendRating', recipientEmail, userEmail, messageTitle, message, function(error, result) {
+			// display the error to the user and abort
+			if (error) {
+				return alert(error.reason);
+			}
+
+		});
 	}
-	*/
+
 
 });
 
@@ -140,120 +157,147 @@ Template.profile.helpers({
 	'getImage': function() 
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		//console.log(user);
-		//console.log(user.profile);
-		if (!(jQuery.isEmptyObject(user.profile)))
+
+		if (Meteor.user())
 		{
-			return user.profile.image;
+			if (user.profile.image)
+			{
+				return user.profile.image;
+			}
+			else
+			{
+				return "img/colonial-profile.jpg";
+			}
 		}
-		else 
-		{
-			return "img/colonial-profile.jpg";
-		}
+
 	},
 	'getName': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		console.log(!(jQuery.isEmptyObject(user.name)));
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.name)
+		if (Meteor.user())
 		{
-			return user.profile.name;
+			if (user.profile.name)
+			{
+				return user.profile.name;
+			}
+			else
+			{
+				return "N/A";
+			}
 		}
-		else 
-		{
-			return "N/A";
-		}
+
 
 	},
 	'getSchool': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.school)
-		{
-			return user.profile.school;
-		}
-		else 
-		{
-			return "N/A";
-		}
 
+		if (Meteor.user())
+		{
+			if (user.profile.school)
+			{
+				return user.profile.school;
+			}
+			else
+			{
+				return "N/A";
+			}
+		}
 	},
 	'getMajor': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.major)
-		{
-			return user.profile.major;
-		}
-		else 
-		{
-			return "N/A";
+
+		if (Meteor.user()) {
+			if (user.profile.major) {
+				return user.profile.major;
+			}
+			else {
+				return "N/A";
+			}
 		}
 
 	},
 	'getYear': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.year)
-		{
-			return user.profile.year;
-		}
-		else 
-		{
-			return "N/A";
+
+		if (Meteor.user()) {
+			if (user.profile.year) {
+				return user.profile.year;
+			}
+			else {
+				return "N/A";
+			}
 		}
 
 	},
 	'getFavoritePlace': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.favoritePlace)
-		{
-			return user.profile.favoritePlace;
-		}
-		else 
-		{
-			return "N/A";
+
+		if (Meteor.user()) {
+			if (user.profile.favoritePlace) {
+				return user.profile.favoritePlace;
+			}
+			else {
+				return "N/A";
+			}
 		}
 
 	},
 	'getFavoritePart': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		if (!(jQuery.isEmptyObject(user.profile)) && user.profile.favoritePart)
-		{
-			return user.profile.favoritePart;
-		}
-		else 
-		{
-			return "N/A";
+
+		//console.log(user.profile);
+		//console.log(user.profile);
+		if (Meteor.user()) {
+			if (user.profile.favoritePart) {
+				return user.profile.favoritePart;
+			}
+			else {
+				return "N/A";
+			}
 		}
 
+
 	},
-	'getTimeline': function()
-	{
-		
-		var timelineSection = $("#events ul");
-		timelineSection.append("hello");
-	},
+
 	'getRatingLocation': function()
 	{
+		if (Session.get('selectedRating') == undefined)
+		{
+			return;
+		}
 		var rating = Session.get('selectedRating');
 		return rating.location;
 
 	},
 	'getRatingCategory': function()
 	{
+		if (Session.get('selectedRating') == undefined)
+		{
+			return;
+		}
 		var rating = Session.get('selectedRating');
 		return rating.category;
 	},
 	'getRatingRating': function()
 	{
+		if (Session.get('selectedRating') == undefined)
+		{
+			return;
+		}
 		var rating = Session.get('selectedRating');
 		return rating.rating;
 	},
 	'getRatingComment': function()
 	{
+		if (Session.get('selectedRating') == undefined)
+		{
+			return;
+		}
 		var rating = Session.get('selectedRating');
 		return rating.comment;
 	}

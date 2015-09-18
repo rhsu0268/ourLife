@@ -1,3 +1,12 @@
+Meteor.startup(function () {
+
+	Mandrill.config({
+		username: "process.env.rhsu0268@yahoo.com",
+		key: "process.env.aQSCms085BjLwak2QjHVgg"
+	});
+});
+
+
 Images.deny({
 	insert: function(){
  		return false;
@@ -37,4 +46,56 @@ Accounts.onCreateUser(function(options, user) {
   	
   	
   	return user;
+});
+
+Meteor.methods({
+	sendRating: function(to, from, subject, text) {
+		check([to, from, subject, text], [String]);
+
+		// let other Meteor methods run
+		this.unblock();
+
+		// send the email
+		Mandrill.messages.sendTemplate({
+			key: 'aQSCms085BjLwak2QjHVgg', // optional, if you set it in via Mandril.config() already
+			template_name: 'Test',
+			template_content: [
+				{
+					name: 'body',
+					content: 'Breaking news! Federal Agents Raid Gun Shop, Find Weapons'
+				}
+			],
+			message: {
+				subject: subject,
+				from_email: from/* your app's from email ,e.g. Accounts.emailTemplates.from */,
+				to: [
+					{ email: to }
+				],
+				// global merge variable in the *|VARIABLE|* format
+				global_merge_vars: [
+					{
+						name: 'var1',
+						content: 'Global Value 1'
+					}
+				],
+				// per-recipient merge vars
+				merge_vars: [
+					{
+						rcpt: to,
+						vars: [
+							{
+								name: 'fname',
+								content: 'John'
+							},
+							{
+								name: 'lname',
+								content: 'Smith'
+							}
+						]
+					}
+				]
+			}
+		});
+	}
+
 });

@@ -16,3 +16,4 @@ mdg:geolocation
 audit-argument-checks
 cfs:standard-packages
 cfs:gridfs
+wylio:mandrill
