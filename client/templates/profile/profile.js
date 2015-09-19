@@ -158,6 +158,10 @@ Template.profile.events({
 			}
 
 		});
+	}, 
+	'click #recommendEmail': function()
+	{
+		console.log("you clicked recommend.");
 	}
 
 
