@@ -130,17 +130,28 @@ Template.profile.events({
 	{
 		console.log("you clicked email.");
 
+		var recipientName = $('#recipientName').val();
 		var recipientEmail = $('#recipientEmail').val();
 		console.log(recipientEmail);
+
+		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
+		console.log(userName);
 		var userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
 		console.log(userEmail);
 
+		$('#shareRating').modal('toggle');
+		$('#recipientName').val('');
+		$('#recipientEmail').val('');
+
+		var rating = Session.get('selectedRating');
+
 		var messageTitle = "A friend has just shared a rating with you!";
-		var message ="Hello world";
+		var message = "I was at the " + rating.location + ", and I want to give a rating on " + rating.category + "." +
+			"<br>" + "The score is " + rating.rating + " out of 5 and my comment is the following: " + rating.comment;
 
 		// call sendEmail method
 
-		Meteor.call('sendRating', recipientEmail, userEmail, messageTitle, message, function(error, result) {
+		Meteor.call('sendRating', recipientEmail, recipientName, userEmail, userName, messageTitle, message, function(error, result) {
 			// display the error to the user and abort
 			if (error) {
 				return alert(error.reason);

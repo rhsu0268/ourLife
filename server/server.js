@@ -49,8 +49,8 @@ Accounts.onCreateUser(function(options, user) {
 });
 
 Meteor.methods({
-	sendRating: function(to, from, subject, text) {
-		check([to, from, subject, text], [String]);
+	sendRating: function(to, toName, from, fromName, subject, text) {
+		check([to, toName, from, fromName, subject, text], [String]);
 
 		// let other Meteor methods run
 		this.unblock();
@@ -61,8 +61,8 @@ Meteor.methods({
 			template_name: 'Test',
 			template_content: [
 				{
-					name: 'body',
-					content: 'Breaking news! Federal Agents Raid Gun Shop, Find Weapons'
+					name: 'message',
+					content: text
 				}
 			],
 			message: {
@@ -74,8 +74,8 @@ Meteor.methods({
 				// global merge variable in the *|VARIABLE|* format
 				global_merge_vars: [
 					{
-						name: 'var1',
-						content: 'Global Value 1'
+						name: 'message',
+						content: text
 					}
 				],
 				// per-recipient merge vars
@@ -84,12 +84,13 @@ Meteor.methods({
 						rcpt: to,
 						vars: [
 							{
-								name: 'fname',
-								content: 'John'
+								name: 'tname',
+								content: toName
 							},
+
 							{
-								name: 'lname',
-								content: 'Smith'
+								name: 'fname',
+								content: fromName
 							}
 						]
 					}
