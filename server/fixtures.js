@@ -71,7 +71,7 @@ if (CampusLocations.find().count() == 0)
 {
   
    CampusLocations.insert({
-      location: 'Shekman Hall',
+      location: 'Shenkman Hall',
       type: 'Dorm', 
       lat: 38.89793,
       lng: -77.050453,
@@ -136,17 +136,8 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'The Avenue',
       type: 'Shops', 
-      lat: 38.901778,
-      lng: -77.049135,
-      description: 'You can not get more convenient than the Avenue, a mixed-use town center that features shopping, dining, offices, and residences-all right in the heart of the campus.'
-
-   });
-
-   CampusLocations.insert({
-      location: 'The Avenue',
-      type: 'Shops', 
-      lat: 38.901778,
-      lng: -77.049135,
+      lat: 38.900932,
+      lng: -77.049528,
       description: 'You can not get more convenient than the Avenue, a mixed-use town center that features shopping, dining, offices, and residences-all right in the heart of the campus.'
 
    });
@@ -165,7 +156,7 @@ if (CampusLocations.find().count() == 0)
       type: 'Dorm', 
       lat: 38.899802,
       lng: -77.049852,
-      description: 'Munson Hall offers aprtment-style living in double- and quadruple-occupancy units. Each room features a kitchen and private bathroom, and mnay of the units boast charming French doors that provide both privacy and light. Munson Hall is conveniently located near the Foggy Bottom/GWU Metro station and the Whole Foods grocery store.'
+      description: 'Munson Hall offers aprtment-style living in double- and quadruple-occupancy units. Each room features a kitchen and private bathroom, and many of the units boast charming French doors that provide both privacy and light. Munson Hall is conveniently located near the Foggy Bottom/GWU Metro station and the Whole Foods grocery store.'
    });
 
    CampusLocations.insert({
@@ -243,16 +234,16 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'The Dakota',
       type: 'dorm', 
-      lat: 38.897484,
-      lng: -77.047069,
+      lat: 38.897095,
+      lng: -77.046914,
       description: 'The Dakota offers apartment-style living in single-, triple- and quadruple-occupancy units. Each unit features a fully equipped kitchen, making it easy for residents to cook up a meal for friends or roomates. Residents can also meet with classmates or hold study groups in the lounge on the first floor.'
    });
 
    CampusLocations.insert({
       location: 'South Hall',
       type: 'dorm', 
-      lat: 38.897567,
-      lng: -77.04818,
+      lat: 38.897552,
+      lng: -77.048100,
       description: 'LEED-certified, South Hall houses fourth-year students in four and five-person suites that feature single and double bedrooms. Spacious and modern, each suite boasts a washer and dryer, two private bathrooms, a living room, and an eat-in kitchen. Each kitchen is equipped with a dishwasher, microwave, oven, and full-sive refrigerator.'
    });
 
@@ -269,8 +260,8 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: '2109 F Street',
       type: 'dorm', 
-      lat: 38.897496,
-      lng: -77.047139,
+      lat: 38.897615,
+      lng: -77.047157,
       description: '2109 F Street offers apartment-style living for female upperclassmen. A former apartment building, this all female residence hall features double-occupancy units that are each equipped with a kitchen and private bathroom.'
    });
 
