@@ -9,8 +9,9 @@ Template.map.helpers({
     if (GoogleMaps.loaded()) {
 
       return {
-        center: new google.maps.LatLng(38.9007, -77.0508),
-        zoom: 18
+        center: new google.maps.LatLng(38.898333, -77.048825),
+        zoom: 17,
+        zoomControl: true
       };
     }
   }
