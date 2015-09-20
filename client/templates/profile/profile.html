@@ -227,13 +227,27 @@
                               <div class="form-group">
                                  
 
-                                  <input type="text" class="form-control" id="recipientName" placeholder="Name">
+                                  <input type="text" class="form-control" id="recommendRecipientName" placeholder="Name">
                                   <br>
-                                  <input type="email" class="form-control" id="recipientEmail" placeholder="Email">
+                                  <input type="email" class="form-control" id="recommendRecipientEmail" placeholder="Email">
 
-                                  <br><br>
                                   <br>
-                                  <input type="text" class="form-control" id="recommendLocation" placeholder="Location">
+                                  <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary" id="schoolOption">
+                                      <input type="radio" name="options" autocomplete="off">School 
+                                    </label>
+                                    <label class="btn btn-primary">
+                                      <input type="radio" name="options" id="option2" autocomplete="off">Housing
+                                    </label>
+                                    <label class="btn btn-primary">
+                                      <input type="radio" name="options" id="option3" autocomplete="off">Dining
+                                    </label>
+                                  </div>
+                                  <br><br>
+                                 
+                                  <select class="form-control" id="recommendLocation"></select>
+                                  <br>
+                                  
                                   <br>
                                   <textarea class="form-control" style="height:80px;" id="recommendMessage" placeholder="Message">
                                   </textarea>

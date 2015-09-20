@@ -162,6 +162,47 @@ Template.profile.events({
 	'click #recommendEmail': function()
 	{
 		console.log("you clicked recommend.");
+
+		var recipientName = $('#recommendRecipientName').val();
+		var recipientEmail = $('#recommendRecipientEmail').val();
+		var location = $('#recommendLocation').val();
+		var message = $('#recommendMessage').val();
+
+		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
+		console.log(userName);
+		var userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
+		console.log(userEmail);
+
+		var messageTitle = "A friend has just recommended a location with you!";
+		var message = "I want to recommend the " + location + " to you."
+		+ "Here is what I have to say: " + "<br><br>" + message;
+
+		Meteor.call('sendRecommendation', recipientEmail, recipientName, userEmail, userName, messageTitle, message, function(error, result) {
+
+			// display the error to the user and abort
+			if (error) {
+				return alert(error.reason);
+			}
+		});
+
+
+
+	},
+	'click #schoolOption': function()
+	{
+		console.log("you clicked school.");
+		var options = $('#choices');
+		$('#recommendLocation').append('<option value="Location"></option>' + 
+			'<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>' +
+			'<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>' + 
+			'<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>' + 
+			'<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>' + 
+			'<option value="GW Law">GW Law</option>' + 
+			'<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>' + 
+			'<option value="School of Business">School of Business</option>' + 
+			'<option value="Milken School of Public Health">Milken School of Public Health</option>' + 
+			'<option value="College of Professional Studies">College of Professional Studies</option>' + 
+			'<option value="School of Nursing">School of Nursing</option>');
 	}
 
 

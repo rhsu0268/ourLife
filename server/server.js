@@ -97,6 +97,55 @@ Meteor.methods({
 				]
 			}
 		});
+	},
+	'sendRecommendation': function(to, toName, from, fromName, subject, text) {
+		check([to, toName, from, fromName, subject, text], [String]);
+
+		// let other Meteor methods run
+		this.unblock();
+
+		// send the email
+		Mandrill.messages.sendTemplate({
+			key: 'aQSCms085BjLwak2QjHVgg', // optional, if you set it in via Mandril.config() already
+			template_name: 'RecommendTemplate',
+			template_content: [
+				{
+					name: 'message',
+					content: text
+				}
+			],
+			message: {
+				subject: subject,
+				from_email: from/* your app's from email ,e.g. Accounts.emailTemplates.from */,
+				to: [
+					{ email: to }
+				],
+				// global merge variable in the *|VARIABLE|* format
+				global_merge_vars: [
+					{
+						name: 'message',
+						content: text
+					}
+				],
+				// per-recipient merge vars
+				merge_vars: [
+					{
+						rcpt: to,
+						vars: [
+							{
+								name: 'tname',
+								content: toName
+							},
+
+							{
+								name: 'fname',
+								content: fromName
+							}
+						]
+					}
+				]
+			}
+		});
 	}
 
 });
