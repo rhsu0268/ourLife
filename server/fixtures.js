@@ -291,25 +291,25 @@ if (CampusLocations.find().count() == 0)
 
    CampusLocations.insert({
       location: 'Staughton Hall',
-      type: 'dorm', 
+      type: 'school', 
       lat: 38.898814,
       lng: -77.048489,
       description: 'Staughton Hall, named in honor of William Staughton, the first President of the university (1821-1827), is one of several buildings that house the School of Engineering and Applied Science. Along with classroom facilities, this building also plays host to the Cyber Security Policy and Research Institute.'
    });
 
    CampusLocations.insert({
-      location: 'Staughton Hall',
-      type: 'dorm', 
-      lat: 38.898814,
-      lng: -77.048489,
-      description: 'Staughton Hall, named in honor of William Staughton, the first President of the university (1821-1827), is one of several buildings that house the School of Engineering and Applied Science. Along with classroom facilities, this building also plays host to the Cyber Security Policy and Research Institute.'
+      location: 'GW Delicatessen',
+      type: 'dining', 
+      lat: 38.898552,
+      lng: -77.048270,
+      description: 'Students of all shapes and sizes gather here to fuel themselves with coffee and energy drinks or cure their hangover with a packed bagel sandwich. From towering basketball players, frat boys in Sperry&#39s, sorority girls in boots and leggings, GW cheerleaders or dancers decked out in uniform, and hipsters in plaid and beanies everyone at GW loves the deli.'
    });
 
    CampusLocations.insert({
       location: 'Monroe Hall',
       type: 'school', 
-      lat: 38.898534,
-      lng: -77.047205,
+      lat: 38.898532,
+      lng: -77.047170,
       description: 'Monroe Hall and the Hall of Government are two academic buildings that are connected. Both overlook Mid-Campus Quad and are home to the Columbian College of Arts & Sciences&#39; economics, mathematics, political science and speech and hearing departments.'
    });
 
@@ -330,35 +330,11 @@ if (CampusLocations.find().count() == 0)
    });
 
    CampusLocations.insert({
-      location: 'Lisner Auditorium',
-      type: 'enrichment', 
-      lat: 38.899319,
-      lng: -77.047088,
-      description: 'Lisner Auditorium is the university&#39;s premier venue for concerts, performances, lectures, and other cultural entertainment. Since opening its doors in 1946, Lisner Auditorium has hosted world famous musicians, dancers, intellectuals and entertainers. The diverse list of guests and performers includes the Alvin Ailey American Dance Theater, Jay Leno, Jewel, Miriam Makeba, Jon Stewart, the Honorable Sonia Sotomayor, and Toni Morrison. Students can often purchase discounted tickets to these events, making it easy to experince world-class entertainment right in the heart of the Foggy Bottom campus.'
-   });
-
-   CampusLocations.insert({
       location: 'Kogan Plaza',
       type: 'enrichment', 
       lat: 38.899358,
       lng: -77.047868,
       description: 'Students, faculty, and staff enjoy Kogan Plaza as a popular outdoor space for student organization activities, university sponsored events and a variety of student life gatherings.'
-   });
-
-   CampusLocations.insert({
-      location: 'Kogan Plaza',
-      type: 'enrichment', 
-      lat: 38.899358,
-      lng: -77.047868,
-      description: 'Students, faculty, and staff enjoy Kogan Plaza as a popular outdoor space for student organization activities, university sponsored events and a variety of student life gatherings.'
-   });
-
-   CampusLocations.insert({
-      location: 'Academic Center/Philips Hall/Rome Hall',
-      type: 'school', 
-      lat: 38.900176,
-      lng: -77.048193,
-      description: 'The Academic Center, made up of Rome Hall, Phillips Hall, and Smith Hall of Art, is home to the Columbian College of Arts & Sciences and a number of its departments. It is a main classroom building with undergraduate language labs and undergraduate advising offices.'
    });
 
    CampusLocations.insert({
@@ -396,16 +372,16 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'Marvin Center',
       type: 'enrichment', 
-      lat: 38.899945,
-      lng: -77.047189,
+      lat: 38.899993,
+      lng: -77.047151,
       description: 'The Cloyd Heck Marvin Center is truly the university community center. The building plays host to a wide range of services all things student - From J Street, the university&#39;s primary dining facility, and Colonial Central, the student services hub, to the admissions welcome center and multipurpose rooms, and even the GW Campus Stores. The Marvin Center is the new home to the Colonial Health Center, which houses medical, mental health, and health promotion and prevention services, along withthe Parenting initiative. A large portion of the building is also utilized by Colonial Crossroads, a multifaceted student life support center that includes the Center for Student Engagement, the Center for Career Services, and the Center for Civic Engagement and Public Service.'
    });
 
    CampusLocations.insert({
       location: 'Lafayette Hall',
       type: 'dorm', 
-      lat: 38.900478,
-      lng: -77.046888,
+      lat: 38.900462,
+      lng: -77.046863,
       description: 'Lafayette Hall is the third GW residence hall to recieve Leadership in Energy and Environmental Design (LEED) Gold certification. &#34;Green&#34; features include an energy-efficient roof and windows, natural daylight and views for residents. There are also thermal controls for all occupants and low-volatile organic compound (VOC) interior finishes to reduce odor and irritants.'
    });
 
@@ -422,7 +398,7 @@ if (CampusLocations.find().count() == 0)
       type: 'service', 
       lat: 38.901146,
       lng: -77.047258,
-      description: '2100 Pennsylvania Avenue is home to a number of academic departments within the School of Medicine and Health Sciences as well as GW&#39;s Office of the Senior Vice President and General Counsel, which provides, coordinates and directs all legal services for the university. This building is also home to Buff & Blue on Penn, one of the the three GW Campus Stores where you can get all your GW gear. TGI Fridays, Capitol Grounds (a small cafe), a barber shop and a shop repair store, all with street level access, are also located here.'
+      description: '2100 Pennsylvania Avenue is home to a number of academic departments within the School of Medicine and Health Sciences as well as GW&#39;s Office of the Senior Vice President and General Counsel, which provides, coordinates and directs all legal services for the university. This building is also home to Buff & Blue on Penn, one of the the three GW Campus Stores where you can get all your GW gear. TGI Fridays, Capitol Grounds (a small cafe), a barber shop and a shoe repair store, all with street level access, are also located here.'
    });
 
    CampusLocations.insert({
@@ -444,16 +420,16 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'Samson Hall',
       type: 'school', 
-      lat: 38.899408,
-      lng: -77.046395,
+      lat: 38.899381,
+      lng: -77.046422,
       description: 'Corcoran Hall was the first building built on the university&#39;s Foggy Bottom Cmapus and it&#39;s situated on the edge of University Yard, a popular outdoor space for students to gather.'
    });
 
    CampusLocations.insert({
       location: 'Corcoran Hall',
       type: 'school', 
-      lat: 38.899017,
-      lng: -77.046512,
+      lat: 38.899019,
+      lng: -77.046496,
       description: 'Corcoran Hall was the first building built on the university&#39;s Foggy Bottom Cmapus and it&#39;s situated on the edge of University Yard, a popular outdoor space for students to gather.'
    });
 
