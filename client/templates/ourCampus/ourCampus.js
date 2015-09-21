@@ -11,7 +11,7 @@ Template.map.helpers({
       return {
         center: new google.maps.LatLng(38.898333, -77.048825),
         zoom: 17,
-        zoomControl: true
+    
       };
     }
   }

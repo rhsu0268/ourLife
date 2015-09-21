@@ -452,24 +452,24 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'Lisner Hall',
       type: 'school', 
-      lat: 38.898381,
-      lng: -77.045906,
+      lat: 38.898576,
+      lng: -77.045401,
       description: 'The GW Law complex is comprised of Lerner Hall, Stockton Hall, Jacob Burns Law Library, E Building, Stuart Hall, Lisner Hall and 700 20th Street. The complex consists of over 340,000 square feet with 41,000 square feet devoted to classrooms and 54,000 square feet devoted to the Jacob Burns Law Library. In addition, this space houses faculty office areas, seminar rooms, classrooms, computer labs, and a student commons, which features lounge space and kitchen facilities.'
    });
 
    CampusLocations.insert({
       location: 'Stuart Hall',
       type: 'school', 
-      lat: 38.89839,
-      lng: -77.0459456,
+      lat: 38.898615,
+      lng: -77.045765,
       description: 'The GW Law complex is comprised of Lerner Hall, Stockton Hall, Jacob Burns Law Library, E Building, Stuart Hall, Lisner Hall and 700 20th Street. The complex consists of over 340,000 square feet with 41,000 square feet devoted to classrooms and 54,000 square feet devoted to the Jacob Burns Law Library. In addition, this space houses faculty office areas, seminar rooms, classrooms, computer labs, and a student commons, which features lounge space and kitchen facilities.'
    });
 
    CampusLocations.insert({
       location: 'Law School Complex',
       type: 'school', 
-      lat: 38.897886,
-      lng: -77.044886,
+      lat: 38.898648,
+      lng: -77.045787,
       description: 'The GW Law complex is comprised of Lerner Hall, Stockton Hall, Jacob Burns Law Library, E Building, Stuart Hall, Lisner Hall and 700 20th Street. The complex consists of over 340,000 square feet with 41,000 square feet devoted to classrooms and 54,000 square feet devoted to the Jacob Burns Law Library. In addition, this space houses faculty office areas, seminar rooms, classrooms, computer labs, and a student commons, which features lounge space and kitchen facilities.'
    });
 
@@ -478,7 +478,7 @@ if (CampusLocations.find().count() == 0)
       type: 'library', 
       lat: 38.898988,
       lng: -77.045155,
-      description: 'This is the library for GW law.'
+      description: 'The Jacob Burns Law Library is among the largest and most prestigious academic law libraries in the United States. It offers a research collection rich in the historic and contemporary legal materials of America, as well as international and comparative materials. The Law Library&#39;s holdings of more than 700,000 volumes (and equivalents) and its wide range of electronic resources provide researchers with a wealth of legal information.'
    });
 
    CampusLocations.insert({
@@ -492,8 +492,8 @@ if (CampusLocations.find().count() == 0)
    CampusLocations.insert({
       location: 'Tonic Quigley&#39;s',
       type: 'restaurant', 
-      lat: 38.898097,
-      lng: -77.046476,
+      lat: 38.898072,
+      lng: -77.046468,
       description: 'Once a popular pharmacy and GW gathering place, the building at 2036 G. Street, NW. has hung onto its importance as a GW hotspot. Although it retains Quigley&#39;s Pharmacy&#39;s exterior facade, the building is now home to Tonic Restaurant, an American cuisine eatery that has revitalized the building.'
    });
 
@@ -518,7 +518,7 @@ if (CampusLocations.find().count() == 0)
       type: 'dorm', 
       lat: 38.897607,
       lng: -77.045122,
-      description: 'Potomac House offerss GW students comfortable living options in double rooms with adjoining bathrooms. It is situated in the center of the F Street corridor, across the street from Anniversary Park and Foggy Bottom Grocery and Deli, one block from the Elliott School of International Affairs and a short walk from the Marvin Center. Potomac House also boasts a dining venue on the ground floor, making it easy for residents to grab coffee or lunch on their way to class.'
+      description: 'Potomac House offers GW students comfortable living options in double rooms with adjoining bathrooms. It is situated in the center of the F Street corridor, across the street from Anniversary Park and Foggy Bottom Grocery and Deli, one block from the Elliott School of International Affairs and a short walk from the Marvin Center. Potomac House also boasts a dining venue on the ground floor, making it easy for residents to grab coffee or lunch on their way to class.'
    });
 
    CampusLocations.insert({
@@ -534,7 +534,7 @@ if (CampusLocations.find().count() == 0)
       type: 'dorm', 
       lat: 38.89632,
       lng: -77.044234,
-      description: 'Francis Scott Key Hall offers apartment-style living in single-, double-, and quadruple-occupancy rooms. All units are equipped with a full kitchen and a private bathroom, and the building features laundry facilities and a piano lounge. Francis Scott Key Hall residents are just a short walk from the Elliott School of International Affairs building.'
+      description: '199 E Street is connected to the state-of-the-art Elliot School of International Affairs building and offers apartment-style living in single, double, triple, and quadruple and five person units.'
    });
 
    CampusLocations.insert({
