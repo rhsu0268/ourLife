@@ -22,6 +22,11 @@ Meteor.publish('housings', function()
    return Housings.find();
 });
 
+Meteor.publish('housingratings', function() 
+{
+   return HousingRatings.find();
+});
+
 Meteor.publish('dininglocations', function() 
 {
    return DiningLocations.find();

@@ -668,12 +668,6 @@ if (Housings.find().count() == 0)
    });
 
    Housings.insert({
-      title: 'Hensley Hall',
-      url: 'http://living.gwu.edu/hensley-hall',
-      image: '/img/housing/Hensley_Hall.jpg'
-   });
-
-   Housings.insert({
       title: 'International House',
       url: 'http://living.gwu.edu/international-house',
       image: '/img/housing/International_House.jpg'

@@ -6,7 +6,14 @@
 	      {{> housingItem}}
 	   </div>
 	   <div>
-	   	
+	   	{{#each housingratings}}
+	   		<div class="panel panel-default">
+	  			<div class="panel-body">
+	    			{{idFromHelper}}: {{category}}: {{rating}}
+	  			</div>
+	  			<div class="panel-footer"> 	{{comment}}</div>
+			</div>
+	   	{{/each}}
 	   </div>
 	</div>
 </template>
