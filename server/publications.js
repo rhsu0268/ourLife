@@ -32,6 +32,11 @@ Meteor.publish('dininglocations', function()
    return DiningLocations.find();
 });
 
+Meteor.publish('diningratings', function() 
+{
+   return DiningRatings.find();
+});
+
 Meteor.publish('librarylocations', function() 
 {
    return LibraryLocations.find();
