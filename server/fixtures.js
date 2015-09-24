@@ -1300,7 +1300,7 @@ if (StudentLifeLocations.find().count() == 0)
    });
 
    StudentLifeLocations.insert({
-      name: 'University Museum/Textiel Museum',
+      name: 'University Museum/Textile Museum',
       url: 'http://museum.gwu.edu/',
       image: '/img/studentLife/Museum.jpg'
    });

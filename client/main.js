@@ -8,3 +8,4 @@ Meteor.subscribe('studentlifelocations');
 Meteor.subscribe('housingratings');
 Meteor.subscribe('diningratings');
 Meteor.subscribe('libraryratings');
+Meteor.subscribe('studentliferatings');

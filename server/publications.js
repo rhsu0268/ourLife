@@ -52,6 +52,11 @@ Meteor.publish('studentlifelocations', function()
    return StudentLifeLocations.find();
 });
 
+Meteor.publish('studentliferatings', function() 
+{
+   return StudentLifeRatings.find();
+});
+
 Meteor.publish('images', function() 
 {
    return Images.find();
