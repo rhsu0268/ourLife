@@ -42,6 +42,11 @@ Meteor.publish('librarylocations', function()
    return LibraryLocations.find();
 });
 
+Meteor.publish('libraryratings', function()
+{
+   return LibraryRatings.find();
+});
+
 Meteor.publish('studentlifelocations', function() 
 {
    return StudentLifeLocations.find();
