@@ -1,0 +1,39 @@
+<template name="rateStudentLifeForm">
+	<form>
+		<div class="form-group">
+			<label for="studentLife">Location</label>
+				<select class="form-control" id="studentLife">
+					<option value=""></option>
+					<option value="Marvin Center">Marvin Center</option>
+				</select>
+		</div>
+		<div class="form-group">
+			<label for="category">What would you like to comment about?</label>
+			<select class="form-control" id="category">
+				<option value=""></option>
+				<option value="General">General</option>
+				<option value="Food">Space</option>
+				<option value="Service">Recreation/Entertainment</option>
+				<option value="Atmosphere">Atmosphere</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">How many stars would you like to give it?</label>
+			<select class="form-control" id="rating">
+				<option value=""></option>
+				<option value="1">&#9734;</option>
+				<option value="2">&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;</option>
+				<option value="3">&#9734;&#9734;&#9734;&#9734;</option>
+				<option value="5">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rating">Comment</label>
+			<textarea class="form-control" style="height:80px;" id="comment">
+			</textarea>
+		</div>
+		<button type="button" class="btn btn-primary" id="submitRating">Submit</button>
+		
+	</form>
+</template>

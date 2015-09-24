@@ -43,4 +43,23 @@
       </a>
     </div><!-- /.carousel -->
 
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <h2>Other Ratings</h2>
+            <div class="schools">
+            {{#each studentlifelocations}}
+              {{> studentLifeItem}}
+            {{/each}}
+        </div>
+        </div>
+        <div class="col-md-6">
+          <h2>Share a Rating Now!</h2>
+            {{> rateStudentLifeForm}}
+       
+
+       </div>
+    </div>
+  </div>
+
 </template>
