@@ -1,6 +1,6 @@
 Template.rateDiningForm.events({
 
-	'submit form': function(e)
+	'click #submitRating': function(e)
 	{
 		console.log("Inserting...");
 
@@ -21,7 +21,7 @@ Template.rateDiningForm.events({
 				return alert(error.reason);
 			}
 
-			var dining = DiningLocations.findOne( {title: selectedDining} );
+			var dining = DiningLocations.findOne( {name: selectedDining} );
 			console.log(dining);
 			console.log(dining._id);
 
