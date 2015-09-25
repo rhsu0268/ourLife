@@ -99,3 +99,13 @@ a .dropdown-toggle
   border-bottom-color: #fff;
 }
 
+.modal-title 
+{
+  color: black;
+}
+
+.modal-body
+{
+  color: black;
+}
+
