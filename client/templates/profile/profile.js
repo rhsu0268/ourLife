@@ -136,6 +136,13 @@ Template.profile.events({
 
 		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
 		console.log(userName);
+
+		if (!userName)
+		{
+			console.log("Please fill in your profile with a valid name!");
+			$('#shareRating').modal('toggle');
+			return;
+		}
 		var userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
 		console.log(userEmail);
 
