@@ -140,6 +140,7 @@ Template.profile.events({
 		if (!userName)
 		{
 			console.log("Please fill in your profile with a valid name!");
+			throwError("Please fill in your profile with a name!");
 			$('#shareRating').modal('toggle');
 			return;
 		}
@@ -181,6 +182,7 @@ Template.profile.events({
 		if (!userName)
 		{
 			console.log("Please fill in your profile with a valid name!");
+			throwError("Please fill in your profile with a name!");
 			$('#recommend').modal('toggle');
 			return;
 		}
