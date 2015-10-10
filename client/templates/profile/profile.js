@@ -177,6 +177,13 @@ Template.profile.events({
 
 		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
 		console.log(userName);
+
+		if (!userName)
+		{
+			console.log("Please fill in your profile with a valid name!");
+			$('#recommend').modal('toggle');
+			return;
+		}
 		var userEmail = Meteor.users.findOne(Meteor.userId()).emails[0].address;
 		console.log(userEmail);
 
@@ -377,7 +384,7 @@ Template.profile.rendered = function()
 
 	if (events.length == 0)
 	{
-		return;
+		console.log("You have no events!");
 	}
 	var timelineSection = $("#events ul");
 
@@ -402,11 +409,12 @@ Template.profile.rendered = function()
 	}
 
 	var userSchoolRatings = SchoolRatings.find( {userId: Meteor.userId()} ).fetch();
+	console.log(userSchoolRatings);
 
-
-	for (var i = 0; i < userSchoolRatings.length; i++)
+	for (var j = 0; j < userSchoolRatings.length; j++)
 	{
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[i].school + "</td><td class='category'>" + userSchoolRatings[i].category + "</td><td class='rating'>" + userSchoolRatings[i].rating + "</td><td class='comment'>" + userSchoolRatings[i].comment + "</td></tr>");
+		console.log(userSchoolRatings[j]);
+		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
 	}
 
 	$('#userRatings').on('click', 'tbody tr', function(event) {
