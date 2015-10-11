@@ -15,16 +15,13 @@ Template.rateSchoolForm.events({
 			comment: $("#comment").val()
 		};
 
-		/*
-		SchoolRatings.insert({
-			school: selectedSchool, 
-			category: $("#category").val(), 
-			rating: $("#rating").val(),
-			comment: $("#comment").val()
+		var errors = validateSchoolRating(schoolRating);
 
-		});
-		*/
-
+		if (errors.school)
+		{
+			return Session.set('rateSchoolFormErrors', errors);
+		}
+		
 		Meteor.call('schoolRatingInsert', schoolRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)
@@ -47,3 +44,19 @@ Template.rateSchoolForm.events({
 
 
 })
+
+Template.rateSchoolForm.onCreated(function() {
+	Session.set('rateSchoolFormErrors', {});
+
+});
+
+Template.rateSchoolForm.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('rateSchoolFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('rateSchoolFormErrors')[field] ? 'has-error' : '';
+  	}
+
+});
