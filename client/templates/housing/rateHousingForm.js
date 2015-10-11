@@ -15,7 +15,12 @@ Template.rateHousingForm.events({
 			comment: $("#comment").val()
 		};
 
-		
+		var errors = validateHousingRating(housingRating);
+
+		if (errors.housing || errors.category || errors.rating || errors.comment)
+		{
+			return Session.set('rateHousingFormErrors', errors);
+		}
 
 		Meteor.call('housingRatingInsert', housingRating, function(error, result) {
 			// display the error to the user and abort
@@ -39,3 +44,19 @@ Template.rateHousingForm.events({
 
 
 })
+
+Template.rateHousingForm.onCreated(function() {
+	Session.set('rateHousingFormErrors', {});
+
+});
+
+Template.rateHousingForm.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('rateHousingFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('rateHousingFormErrors')[field] ? 'has-error' : '';
+  	}
+
+});
