@@ -17,11 +17,11 @@ Template.rateSchoolForm.events({
 
 		var errors = validateSchoolRating(schoolRating);
 
-		if (errors.school)
+		if (errors.school || errors.category || errors.rating || errors.comment)
 		{
 			return Session.set('rateSchoolFormErrors', errors);
 		}
-		
+
 		Meteor.call('schoolRatingInsert', schoolRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)

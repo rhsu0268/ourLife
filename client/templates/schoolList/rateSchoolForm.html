@@ -1,8 +1,8 @@
 <template name="rateSchoolForm">
 	<form>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'school'}}">
 			<label for="school">School</label>
-				<select class="form-control" id="school">
+				<select class="form-control " id="school">
 				<option value=""></option>
 				<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>
 				<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>
@@ -15,8 +15,9 @@
 				<option value="College of Professional Studies">College of Professional Studies</option>
 				<option value="School of Nursing">School of Nursing</option>
 				</select>
+				<span class="help-block">{{errorMessage 'school'}}</span>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'category'}}">
 			<label for="category">What would you like to comment about?</label>
 			<select class="form-control" id="category">
 				<option value=""></option>
@@ -25,8 +26,9 @@
 				<option value="Faculty">Faculty</option>
 				<option value="Course">Course</option>
 			</select>
+			<span class="help-block">{{errorMessage 'category'}}</span>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'rating'}}">
 			<label for="rating">How many stars would you like to give it?</label>
 			<select class="form-control" id="rating">
 				<option value=""></option>
@@ -36,11 +38,12 @@
 				<option value="3">&#9734;&#9734;&#9734;&#9734;</option>
 				<option value="5">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
 			</select>
+			<span class="help-block">{{errorMessage 'rating'}}</span>
 		</div>
-		<div class="form-group {{errorClass 'school'}}">
+		<div class="form-group {{errorClass 'comment'}}">
 			<label for="rating">Comment</label>
 			<textarea class="form-control" rows="1" cols="50" wrap="physical" style="height:80px;" id="comment"></textarea>
-			<span class="help-block">{{errorMessage 'school'}}</span>
+			<span class="help-block">{{errorMessage 'comment'}}</span>
 		</div>
 		<input type="submit" value="Submit" class="btn btn-primary"/>
 		
