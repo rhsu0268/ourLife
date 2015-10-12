@@ -14,6 +14,13 @@ Template.rateLibraryForm.events({
 			comment: $("#comment").val()
 		};
 
+		var errors = validateLibraryRating(libraryRating);
+
+		if (errors.library || errors.category || errors.rating || errors.comment)
+		{
+			return Session.set('rateLibraryFormErrors', errors);
+		}
+
 		Meteor.call('libraryRatingInsert', libraryRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)
@@ -32,5 +39,21 @@ Template.rateLibraryForm.events({
 		});
 	}
 
+
+});
+
+Template.rateLibraryForm.onCreated(function() {
+	Session.set('rateLibraryFormErrors', {});
+
+});
+
+Template.rateLibraryForm.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('rateLibraryFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('rateLibraryFormErrors')[field] ? 'has-error' : '';
+  	}
 
 });
