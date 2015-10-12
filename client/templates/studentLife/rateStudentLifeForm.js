@@ -14,6 +14,14 @@ Template.rateStudentLifeForm.events({
 			comment: $("#comment").val()
 		};
 
+		var errors = validateStudentLifeRating(studentLifeRating);
+
+		if (errors.studentLife || errors.category || errors.rating || errors.comment)
+		{
+			return Session.set('rateStudentLifeFormErrors', errors);
+		}
+
+
 		Meteor.call('studentLifeInsert', studentLifeRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)
@@ -32,5 +40,21 @@ Template.rateStudentLifeForm.events({
 		});
 	}
 
+
+});
+
+Template.rateStudentLifeForm.onCreated(function() {
+	Session.set('rateStudentLifeFormErrors', {});
+
+});
+
+Template.rateStudentLifeForm.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('rateStudentLifeFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('rateStudentLifeFormErrors')[field] ? 'has-error' : '';
+  	}
 
 });
