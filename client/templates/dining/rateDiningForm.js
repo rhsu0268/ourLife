@@ -14,6 +14,13 @@ Template.rateDiningForm.events({
 			comment: $("#comment").val()
 		};
 
+		var errors = validateDiningRating(diningRating);
+
+		if (errors.dining || errors.category || errors.rating || errors.comment)
+		{
+			return Session.set('rateDiningFormErrors', errors);
+		}
+
 		Meteor.call('diningRatingInsert', diningRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)
@@ -32,5 +39,21 @@ Template.rateDiningForm.events({
 		});
 	}
 
+
+});
+
+Template.rateDiningForm.onCreated(function() {
+	Session.set('rateDiningFormErrors', {});
+
+});
+
+Template.rateDiningForm.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('rateDiningFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('rateDiningFormErrors')[field] ? 'has-error' : '';
+  	}
 
 });

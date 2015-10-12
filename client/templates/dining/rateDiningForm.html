@@ -1,6 +1,6 @@
 <template name="rateDiningForm">
 	<form>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'dining'}}">
 			<label for="dining">Dining Option</label>
 				<select class="form-control" id="dining">
 				<option value=""></option>
@@ -55,8 +55,9 @@
 				<option value="Tonic">Tonic</option>
 				<option value="WholeFoods">WholeFoods</option>
 			</select>
+			<span class="help-block">{{errorMessage 'dining'}}</span>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'category'}}">
 			<label for="category">What would you like to comment about?</label>
 			<select class="form-control" id="category">
 				<option value=""></option>
@@ -65,8 +66,9 @@
 				<option value="Service">Services</option>
 				<option value="Atmosphere">Atmosphere</option>
 			</select>
+			<span class="help-block">{{errorMessage 'category'}}</span>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'rating'}}">
 			<label for="rating">How many stars would you like to give it?</label>
 			<select class="form-control" id="rating">
 				<option value=""></option>
@@ -76,11 +78,12 @@
 				<option value="3">&#9734;&#9734;&#9734;&#9734;</option>
 				<option value="5">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
 			</select>
+			<span class="help-block">{{errorMessage 'rating'}}</span>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'comment'}}">
 			<label for="rating">Comment</label>
-			<textarea class="form-control" style="height:80px;" id="comment">
-			</textarea>
+			<textarea class="form-control" rows="1" cols="50" wrap="physical" style="height:80px;" id="comment"></textarea>
+			<span class="help-block">{{errorMessage 'comment'}}</span>
 		</div>
 		<button type="button" class="btn btn-primary" id="submitRating">Submit</button>
 		
