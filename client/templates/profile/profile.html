@@ -191,7 +191,7 @@
                                 </div>
                             <div class="modal-body">
 
-                                <div class="form-group">
+                                <div class="form-group {{errorClass 'name'}}">
                                     <ul class="list-group" id="ratingInfo">
                                         <li class="list-group-item">Location: {{getRatingLocation}}</li>
                                         <li class="list-group-item">Category: {{getRatingCategory}}</li>
@@ -199,10 +199,13 @@
                                         <li class="list-group-item">Comment: {{getRatingComment}}</li>
                                     </ul>
 
-                                    <input type="text" class="form-control" id="recipientName" placeholder="Name">
+                                    <input type="text" class="form-control" id="recipientName" placeholder="Recipient Name">
+                                    <span class="help-block">{{errorMessage 'name'}}</span>
+                                </div>
+                                <div class="form-group {{errorClass 'email'}}">
                                     <br>
-                                    <input type="email" class="form-control" id="recipientEmail" placeholder="Email">
-
+                                    <input type="email" class="form-control" id="recipientEmail" placeholder="Recipient Email">
+                                    <span class="help-block">{{errorMessage 'email'}}</span>
                                 </div>
 
                                 <button id="sendEmail" type="button" class="btn btn-info">Share</button>

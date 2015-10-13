@@ -114,7 +114,7 @@ Template.profile.events({
 
 		var errors = validateEventInfo(eventInfo);
 
-		if (errors.year)
+		if (errors.year || errors.event)
 		{
 			return Session.set('timelineFormErrors', errors);
 		}
@@ -143,6 +143,14 @@ Template.profile.events({
 		var recipientName = $('#recipientName').val();
 		var recipientEmail = $('#recipientEmail').val();
 		console.log(recipientEmail);
+
+		var errors = validateEmailInfo(recipientName, recipientEmail);
+
+		if (errors.name || errors.email)
+		{
+			return Session.set('timelineFormErrors', errors);
+		}
+
 
 		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
 		console.log(userName);
