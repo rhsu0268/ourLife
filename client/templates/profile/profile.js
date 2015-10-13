@@ -101,7 +101,7 @@ Template.profile.events({
 		event.preventDefault();
 		console.log("You clicked add Event!");
 
-		$('#timeLine').modal('toggle');
+		
 
 		var userId = Meteor.userId();
 		console.log(userId);
@@ -111,6 +111,14 @@ Template.profile.events({
 			"year": $('#eventYear').val(),
 			"event": $('#event').val()
 		};
+
+		var errors = validateEventInfo(eventInfo);
+
+		if (errors.year)
+		{
+			return Session.set('timelineFormErrors', errors);
+		}
+
 
 		Meteor.call('eventInsert', eventInfo, userId, function(error, result) {
 
@@ -123,6 +131,8 @@ Template.profile.events({
 		timelineSection.append("<li class='list-group-item'>" + eventInfo.year + ": " + eventInfo.event + "</li>");
 
 		});
+
+		$('#timeLine').modal('toggle');
 
 
 	},
@@ -449,4 +459,20 @@ Template.profile.rendered = function()
 	});
 
 }
+
+Template.profile.onCreated(function() {
+	Session.set('timelineFormErrors', {});
+
+});
+
+Template.profile.helpers({
+	errorMessage: function(field)
+	{
+		return Session.get('timelineFormErrors')[field];
+	}, 
+	errorClass: function (field) {
+    	return !!Session.get('timelineFormErrors')[field] ? 'has-error' : '';
+  	}
+
+});
 
