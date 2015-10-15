@@ -228,35 +228,40 @@
                               </div>
                           <div class="modal-body">
 
-                              <div class="form-group">
-                                 
-
+                              <div class="form-group {{errorClass 'rName'}}">
                                   <input type="text" class="form-control" id="recommendRecipientName" placeholder="Name">
-                                  <br>
+                                  <span class="help-block">{{errorMessage 'rName'}}</span>
+                              </div>
+                              <div class="form-group {{errorClass 'rEmail'}}">
                                   <input type="email" class="form-control" id="recommendRecipientEmail" placeholder="Email">
-
-                                  <br>
+                                  <span class="help-block">{{errorMessage 'rName'}}</span>
+                              </div>
                                   <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary" id="schoolOption">
-                                      <input type="radio" name="options" autocomplete="off">School 
+                                    <label class="btn btn-primary active" id="schoolOption">
+                                      <input type="radio" name="options" checked>School 
                                     </label>
-                                    <label class="btn btn-primary">
-                                      <input type="radio" name="options" id="option2" autocomplete="off">Housing
+                                    <label class="btn btn-primary" id="housingOption">
+                                      <input type="radio" name="options" autocomplete="off">Housing
                                     </label>
                                     <label class="btn btn-primary">
                                       <input type="radio" name="options" id="option3" autocomplete="off">Dining
                                     </label>
                                   </div>
                                   <br><br>
-                                 
-                                  <select class="form-control" id="recommendLocation"></select>
-                                  <br>
-                                  
-                                  <br>
-                                  <textarea class="form-control" style="height:80px;" id="recommendMessage" placeholder="Message">
-                                  </textarea>
+                                  <div class="form-group {{errorClass 'location'}}">
+                               
+                                    <select class="form-control" id="recommendLocation">
+                                    </select>
 
-                              </div>
+                                    <span class="help-block">{{errorMessage 'location'}}</span>
+                                  </div>
+                                  <br>
+                                  <div class="form-group {{errorClass 'message'}}">
+                                    <textarea class="form-control" rows="1" cols="50" wrap="physical" style="height:80px;" id="recommendMessage"></textarea>
+                                    <span class="help-block">{{errorMessage 'message'}}</span>
+
+
+                                  </div>
 
                               <button id="recommendEmail" type="button" class="btn btn-info">Recommend to a Friend</button>
 

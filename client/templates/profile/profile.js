@@ -116,7 +116,7 @@ Template.profile.events({
 
 		if (errors.year || errors.event)
 		{
-			return Session.set('timelineFormErrors', errors);
+			return Session.set('formErrors', errors);
 		}
 
 
@@ -148,7 +148,7 @@ Template.profile.events({
 
 		if (errors.name || errors.email)
 		{
-			return Session.set('timelineFormErrors', errors);
+			return Session.set('formErrors', errors);
 		}
 
 
@@ -194,6 +194,13 @@ Template.profile.events({
 		var location = $('#recommendLocation').val();
 		var message = $('#recommendMessage').val();
 
+		var errors = validateRecommendInfo(recipientName, recipientEmail, location, message);
+
+		if (errors.rName || errors.rEmail || errors.location || errors.message)
+		{
+			return Session.set('formErrors', errors);
+		}
+
 		var userName = Meteor.users.findOne(Meteor.userId()).profile.name;
 		console.log(userName);
 
@@ -224,6 +231,8 @@ Template.profile.events({
 	},
 	'click #schoolOption': function()
 	{
+		console.log($('#recommendLocation'));
+		$('#recommendLocation').find('option').remove();
 		console.log("you clicked school.");
 		var options = $('#choices');
 		$('#recommendLocation').append('<option value="Location"></option>' + 
@@ -237,6 +246,14 @@ Template.profile.events({
 			'<option value="Milken School of Public Health">Milken School of Public Health</option>' + 
 			'<option value="College of Professional Studies">College of Professional Studies</option>' + 
 			'<option value="School of Nursing">School of Nursing</option>');
+	},
+	'click #housingOption': function()
+	{
+		$('#recommendLocation').find('option').remove();
+		console.log("you clicked school.");
+		var options = $('#choices');
+		$('#recommendLocation').append('<option value="Location"></option>' + 
+			'<option value="1959 E Street">1959 E Street</option>');
 	}
 
 
@@ -469,17 +486,17 @@ Template.profile.rendered = function()
 }
 
 Template.profile.onCreated(function() {
-	Session.set('timelineFormErrors', {});
+	Session.set('formErrors', {});
 
 });
 
 Template.profile.helpers({
 	errorMessage: function(field)
 	{
-		return Session.get('timelineFormErrors')[field];
+		return Session.get('formErrors')[field];
 	}, 
 	errorClass: function (field) {
-    	return !!Session.get('timelineFormErrors')[field] ? 'has-error' : '';
+    	return !!Session.get('formErrors')[field] ? 'has-error' : '';
   	}
 
 });
