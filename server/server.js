@@ -4,7 +4,22 @@ Meteor.startup(function () {
 		username: "process.env.rhsu0268@yahoo.com",
 		key: "process.env.aQSCms085BjLwak2QjHVgg"
 	});
+
+	smtp = {
+    username: 'rhsu0268@yahoo.com',
+    password: 'aQSCms085BjLwak2QjHVgg',
+    server:   'smtp.mandrillapp.com',
+    port: 587
+ };
+    
+  process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+	
+
 });
+
+
+
+
 
 
 Images.deny({
@@ -37,6 +52,7 @@ Images.allow({
  	}
 });
 
+
 Accounts.onCreateUser(function(options, user) {
 
   	user.timeline = [];
@@ -47,6 +63,9 @@ Accounts.onCreateUser(function(options, user) {
   	
   	return user;
 });
+
+
+
 
 Meteor.methods({
 	sendRating: function(to, toName, from, fromName, subject, text) {
@@ -149,3 +168,4 @@ Meteor.methods({
 	}
 
 });
+
