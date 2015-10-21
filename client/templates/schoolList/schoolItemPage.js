@@ -27,6 +27,12 @@ Template.schoolItemPage.events({
 	{
 		event.preventDefault();
 		Router.go('schoolList');
-	}
+	}, 
+   'click #upvoteSchoolRating': function(e) {
+      e.preventDefault();
+      console.log("You clicked the upvote Button!");
+      Meteor.call('upvoteSchoolRating', this._id);
+
+   }
 
 })

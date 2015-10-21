@@ -8,8 +8,17 @@
 	   <div>
 	   	{{#each schoolratings}}
 	   		<div class="panel panel-default">
-	  			<div class="panel-body">
-	    			{{category}}: {{rating}}
+	   			<div class="panel-body">
+	   			<div class="col-md-3">
+	   				<br>
+	   				<a href="#" class="upvote btn btn-default" id="upvoteSchoolRating">⬆</a>
+	   			</div>
+	  			
+	  				{{votes}} Votes,
+	  				<br>
+	  				Submitted by {{author}},
+	  				<br>
+	    			Category: {{category}}: {{rating}}
 
 	    			{{#if equals rating 1}}
 					  &#9734;
