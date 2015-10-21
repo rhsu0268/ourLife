@@ -14,6 +14,10 @@ Template.schoolItemPage.helpers({
  
    idFromHelper: function() {
    	  return this._id;
+   }, 
+   equals: function(a, b) {
+
+      return a == b;
    }
 
 });

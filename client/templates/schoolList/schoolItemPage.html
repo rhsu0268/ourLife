@@ -10,8 +10,24 @@
 	   		<div class="panel panel-default">
 	  			<div class="panel-body">
 	    			{{category}}: {{rating}}
+
+	    			{{#if equals rating 1}}
+					  &#9734;
+					{{/if}}
+	    			{{#if equals rating 2}}
+					  &#9734;&#9734;
+					{{/if}}
+	    			{{#if equals rating 3}}
+					  &#9734;&#9734;&#9734;
+					{{/if}}
+					{{#if equals rating 4}}
+					  &#9734;&#9734;&#9734;;&#9734;
+					{{/if}}
+					{{#if equals rating 5}}
+					  &#9734;&#9734;&#9734;;&#9734;;&#9734;
+					{{/if}}
 	  			</div>
-	  			<div class="panel-footer"> 	{{comment}}</div>
+	  			<div class="panel-footer">{{comment}}</div>
 			</div>
 	    {{/each}}
 	   </div>
