@@ -18,7 +18,22 @@ Template.schoolItemPage.helpers({
    equals: function(a, b) {
 
       return a == b;
+   }, 
+   upVotedClass: function() {
+      var userId = Meteor.userId();
+      if (userId && !_.include(this.upvoters, userId))
+      {
+         console.log('btn-default');
+         return 'btn-default';
+      }
+      else 
+      {
+         return 'btn-primary';
+      }
+
+
    }
+
 
 });
 
@@ -36,3 +51,4 @@ Template.schoolItemPage.events({
    }
 
 })
+

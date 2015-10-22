@@ -11,10 +11,10 @@
 	   			<div class="panel-body">
 	   			<div class="col-md-3">
 	   				<br>
-	   				<a href="#" class="upvote btn btn-default" id="upvoteSchoolRating">⬆</a>
+	   				<a href="#" class="upvote btn {{upVotedClass}}" id="upvoteSchoolRating">⬆</a>
 	   			</div>
 	  			
-	  				{{votes}} Votes,
+	  				{{pluralize votes "Vote"}},
 	  				<br>
 	  				Submitted by {{author}},
 	  				<br>
