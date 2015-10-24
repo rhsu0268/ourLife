@@ -8,7 +8,7 @@
   			<div class="panel-body">
     			<div class="col-md-6">
 
-               
+
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -22,7 +22,7 @@
 
                       <input type="file" name="photo" class="myFileInput">
                       <br>
-                     
+
                       <button id="uploadPhoto" type="button" class="btn btn-info">Upload</button>
 
                     </div>
@@ -31,15 +31,15 @@
                   </div>
                   </div>
                 </div>
-                  
-                
+
+
               		<img id="profile-img" src="{{getImage}}" alt="profile-picture" width="170" height="250">
-                
+
               		<br><br>
               		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
                   Upload Photo
                   </button>
-                  
+
 
           	  	</div>
           	  	<div class="col-md-6">
@@ -55,7 +55,7 @@
                         <div class="modal-body">
 
                           <div class="form-group">
-                           
+
                             <input type="text" class="form-control" id="name" placeholder="Name">
                             <br>
                             <input type="text" class="form-control" id="school" placeholder="School">
@@ -68,7 +68,7 @@
                             <br>
                             <input type="text" class="form-control" id="favoritePart" placeholder="Favorite Part About Life">
                           </div>
-                         
+
                           <button id="uploadInfo" type="button" class="btn btn-info">Submit</button>
 
                         </div>
@@ -95,7 +95,7 @@
               		</div>
               		<br>
               		<div id="place">
-              			<b>Favorite Place on Campus: </b>{{getFavoritePlace}} 
+              			<b>Favorite Place on Campus: </b>{{getFavoritePlace}}
               		</div>
               		<br>
               		<div id="place">
@@ -106,12 +106,12 @@
 
 
           	  	</div>
-          	  	
-          	</div>	
+
+          	</div>
   			</div>
 		</div>
 		<div class="col-md-6">
-            <h2>Your Life</h2> 
+            <h2>Your Life</h2>
 
 
              <!-- Modal -->
@@ -132,7 +132,7 @@
                       <input type="text" class="form-control" id="event" placeholder="Event">
                       <span class="help-block">{{errorMessage 'event'}}</span>
                     </div>
-                   
+
                     <button id="uploadEvent" type="button" class="btn btn-info">Add Event</button>
 
                   </div>
@@ -146,7 +146,7 @@
   				<div class="panel-body" id="events">
 
   				<ul class="list-group" id="lifeEvents">
-           
+
 					</ul>
 
 					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#timeLine">Change Major Life Events</button>
@@ -154,7 +154,7 @@
 
   			</div>
 
-        </div>  
+        </div>
         </div>
 
        	<div class="row">
@@ -218,6 +218,11 @@
                 </div>
             		<div class="panel panel-default">
   						<div class="panel-body">
+									<h4>Points: </h4>
+									<h4>Title: </h4>
+									<h4>Ratings Posted:</h4>
+									<h4>Ratings Shared:</h4>
+									<h4>Ratings Recommended:</h4>
                   <!-- Modal -->
                   <div class="modal fade" id="recommend" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog" role="document">
@@ -238,7 +243,7 @@
                               </div>
                                   <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-primary active" id="schoolOption">
-                                      <input type="radio" name="options" checked>School 
+                                      <input type="radio" name="options" checked>School
                                     </label>
                                     <label class="btn btn-primary" id="housingOption">
                                       <input type="radio" name="options" autocomplete="off">Housing
@@ -249,7 +254,7 @@
                                   </div>
                                   <br><br>
                                   <div class="form-group {{errorClass 'location'}}">
-                               
+
                                     <select class="form-control" id="recommendLocation">
                                     </select>
 
@@ -274,9 +279,9 @@
 
   							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#recommend">Recommend Someone</button>
   						</div>
-  					</div> 
+  					</div>
 
-        	</div>  
+        	</div>
         </div>
 	</div>
 </template>

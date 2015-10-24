@@ -11,9 +11,9 @@ Meteor.startup(function () {
     server:   'smtp.mandrillapp.com',
     port: 587
  };
-    
+
   process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
-	
+
 
 });
 
@@ -56,11 +56,12 @@ Images.allow({
 Accounts.onCreateUser(function(options, user) {
 
   	user.timeline = [];
+		user.points = 0;
 
   	if (options.profile)
     user.profile = options.profile;
-  	
-  	
+
+
   	return user;
 });
 
@@ -168,4 +169,3 @@ Meteor.methods({
 	}
 
 });
-
