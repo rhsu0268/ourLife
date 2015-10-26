@@ -1,5 +1,5 @@
 Meteor.publish(null, function() {
-  return Meteor.users.find(this.userId, {fields: {timeline: 1, points: 1}});
+  return Meteor.users.find(this.userId, {fields: {timeline: 1, points: 1, title: 1, ratingsPosted: 1, ratingsShared: 1, ratingsRecommended: 1}});
 });
 
 Meteor.publish('schools', function()

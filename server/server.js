@@ -57,6 +57,11 @@ Accounts.onCreateUser(function(options, user) {
 
   	user.timeline = [];
 		user.points = 0;
+		user.title = "N/A";
+		user.ratingsPosted = 0;
+		user.ratingsShared = 0;
+		user.ratingsRecommended = 0;
+
 
   	if (options.profile)
     user.profile = options.profile;

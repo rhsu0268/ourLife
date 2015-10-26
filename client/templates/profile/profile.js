@@ -5,21 +5,21 @@ Template.profile.events({
 	{
 		FS.Utility.eachFile(event, function(file)
 		{
-			Images.insert(file, function(err, fileObj) 
+			Images.insert(file, function(err, fileObj)
 			{
 				if (err)
 				{
 					// handle error
 					console.log("error!");
 				}
-				else 
+				else
 				{
 					// handle success
 					var userId = Meteor.userId();
 					var imageUpload = "/cfs/files/images/" + fileObj._id;
 					console.log(imageUpload);
 					//$('#profile-img').attr("src", imageUpload);
-					var imageURL = 
+					var imageURL =
 					{
 						"profile.image": "/cfs/files/images/" + fileObj._id
 					};
@@ -34,8 +34,8 @@ Template.profile.events({
 						}
 
 						//$('#profile-img').attr("src", "img/colonial-profile.jpg");
-						
-						
+
+
 					});
 				}
 			});
@@ -76,18 +76,18 @@ Template.profile.events({
 		console.log($('#favoritePlace').val());
 		console.log($('#favoritePart').val());
 		*/
-		
+
 		var userInfo = {
 
 			"profile.name": $('#name').val(),
-			"profile.school": $('#school').val(), 
+			"profile.school": $('#school').val(),
 			"profile.major": $('#major').val(),
 			"profile.year": $('#year').val(),
 			"profile.favoritePlace": $('#favoritePlace').val(),
 			"profile.favoritePart": $('#favoritePart').val()
 
 		};
-		
+
 		Meteor.call('infoInsert', userInfo, userId, function(error, result) {
 
 			if (error)
@@ -95,13 +95,13 @@ Template.profile.events({
 				return alert(error.reason);
 			}
 		});
-	}, 
+	},
 	'click #uploadEvent': function(event, template)
 	{
 		event.preventDefault();
 		console.log("You clicked add Event!");
 
-		
+
 
 		var userId = Meteor.userId();
 		console.log(userId);
@@ -184,7 +184,7 @@ Template.profile.events({
 			}
 
 		});
-	}, 
+	},
 	'click #recommendEmail': function()
 	{
 		console.log("you clicked recommend.");
@@ -235,16 +235,16 @@ Template.profile.events({
 		$('#recommendLocation').find('option').remove();
 		console.log("you clicked school.");
 		var options = $('#choices');
-		$('#recommendLocation').append('<option value="Location"></option>' + 
+		$('#recommendLocation').append('<option value="Location"></option>' +
 			'<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>' +
-			'<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>' + 
-			'<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>' + 
-			'<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>' + 
-			'<option value="GW Law">GW Law</option>' + 
-			'<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>' + 
-			'<option value="School of Business">School of Business</option>' + 
-			'<option value="Milken School of Public Health">Milken School of Public Health</option>' + 
-			'<option value="College of Professional Studies">College of Professional Studies</option>' + 
+			'<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>' +
+			'<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>' +
+			'<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>' +
+			'<option value="GW Law">GW Law</option>' +
+			'<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>' +
+			'<option value="School of Business">School of Business</option>' +
+			'<option value="Milken School of Public Health">Milken School of Public Health</option>' +
+			'<option value="College of Professional Studies">College of Professional Studies</option>' +
 			'<option value="School of Nursing">School of Nursing</option>');
 	},
 	'click #housingOption': function()
@@ -252,7 +252,7 @@ Template.profile.events({
 		$('#recommendLocation').find('option').remove();
 		console.log("you clicked school.");
 		var options = $('#choices');
-		$('#recommendLocation').append('<option value="Location"></option>' + 
+		$('#recommendLocation').append('<option value="Location"></option>' +
 			'<option value="1959 E Street">1959 E Street</option>');
 	}
 
@@ -261,7 +261,7 @@ Template.profile.events({
 
 Template.profile.helpers({
 
-	'getImage': function() 
+	'getImage': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
 
@@ -407,8 +407,39 @@ Template.profile.helpers({
 		}
 		var rating = Session.get('selectedRating');
 		return rating.comment;
+	},
+	'getPoints': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		//console.log(user.points);
+		return user.points;
+	},
+	'getTitle': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		return user.title;
+	},
+	'getTitle': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		return user.title;
+	},
+	'getRatingsPosted': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		console.log(user.ratingsPosted);
+		return user.ratingsPosted;
+	},
+	'getRatingsShared': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		return user.ratingsShared;
+	},
+	'getRatingsRecommended': function()
+	{
+		var user = Meteor.users.findOne(Meteor.userId());
+		return user.ratingsRecommended;
 	}
-
 
 });
 
@@ -439,7 +470,7 @@ Template.profile.rendered = function()
 		{
 			timelineSection.append("<li class='list-group-item list-group-item-warning'>" + events[i].year + ": " + events[i].event + "</li>");
 		}
-		else 
+		else
 		{
 			timelineSection.append("<li class='list-group-item list-group-item-danger'>" + events[i].year + ": " + events[i].event + "</li>");
 		}
@@ -479,7 +510,7 @@ Template.profile.rendered = function()
 		Session.set('selectedRating', ratingItem);
 		//var selectedRating = Session.get('selectedRating');
 		//console.log(selectedRating);
-		
+
 
 	});
 
@@ -494,10 +525,9 @@ Template.profile.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('formErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('formErrors')[field] ? 'has-error' : '';
   	}
 
 });
-
