@@ -541,6 +541,24 @@ Template.profile.rendered = function()
 		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
 	}
 
+	var userHousingRatings = HousingRatings.find( {userId: Meteor.userId()} ).fetch();
+	console.log(userHousingRatings);
+
+	for (var j = 0; j < userHousingRatings.length; j++)
+	{
+		console.log(userHousingRatings[j]);
+		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userHousingRatings[j].housing + "</td><td class='category'>" + userHousingRatings[j].category + "</td><td class='rating'>" + userHousingRatings[j].rating + "</td><td class='comment'>" + userHousingRatings[j].comment + "</td></tr>");
+	}
+
+	var userDiningRatings = DiningRatings.find( {userId: Meteor.userId()} ).fetch();
+	console.log(userDiningRatings);
+
+	for (var j = 0; j < userDiningRatings.length; j++)
+	{
+		console.log(userDiningRatings[j]);
+		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userDiningRatings[j].dining+ "</td><td class='category'>" + userDiningRatings[j].category + "</td><td class='rating'>" + userDiningRatings[j].rating + "</td><td class='comment'>" + userDiningRatings[j].comment + "</td></tr>");
+	}
+
 	$('#userRatings').on('click', 'tbody tr', function(event) {
 
 		console.log("CLICKED");
