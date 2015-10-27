@@ -235,26 +235,82 @@ Template.profile.events({
 		$('#recommendLocation').find('option').remove();
 		console.log("you clicked school.");
 		var options = $('#choices');
-		$('#recommendLocation').append('<option value="Location"></option>' +
-			'<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>' +
-			'<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>' +
-			'<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>' +
-			'<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>' +
-			'<option value="GW Law">GW Law</option>' +
-			'<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>' +
-			'<option value="School of Business">School of Business</option>' +
-			'<option value="Milken School of Public Health">Milken School of Public Health</option>' +
-			'<option value="College of Professional Studies">College of Professional Studies</option>' +
-			'<option value="School of Nursing">School of Nursing</option>');
+
+		var schoolOptions = Schools.find().fetch();
+		console.log(schoolOptions);
+		$('#recommendLocation').append('<option value="Location"></option>');
+		for (var i = 0; i < schoolOptions.length; i++)
+		{
+			console.log(schoolOptions[i].title);
+			$('#recommendLocation').append($("<option/>").val(schoolOptions[i].title).text(schoolOptions[i].title));
+		}
+
 	},
 	'click #housingOption': function()
 	{
 		$('#recommendLocation').find('option').remove();
 		console.log("you clicked school.");
 		var options = $('#choices');
-		$('#recommendLocation').append('<option value="Location"></option>' +
-			'<option value="1959 E Street">1959 E Street</option>');
+
+		var housingOptions = Housings.find().fetch();
+		console.log(housingOptions);
+		$('#recommendLocation').append('<option value="Location"></option>');
+		for (var i = 0; i < housingOptions.length; i++)
+		{
+			console.log(housingOptions[i].title);
+			$('#recommendLocation').append($("<option/>").val(housingOptions[i].title).text(housingOptions[i].title));
+		}
+
+	},
+	'click #diningOption': function()
+	{
+		$('#recommendLocation').find('option').remove();
+		console.log("you clicked dining.");
+		var options = $('#choices');
+
+		var diningOptions = DiningLocations.find().fetch();
+		console.log(diningOptions);
+		$('#recommendLocation').append('<option value="Location"></option>');
+		for (var i = 0; i < diningOptions.length; i++)
+		{
+			console.log(diningOptions[i].name);
+			$('#recommendLocation').append($("<option/>").val(diningOptions[i].name).text(diningOptions[i].name));
+		}
+
+	},
+	'click #libraryOption': function()
+	{
+		$('#recommendLocation').find('option').remove();
+		console.log("you clicked library.");
+		var options = $('#choices');
+
+		var libraryOptions = LibraryLocations.find().fetch();
+		console.log(libraryOptions);
+		$('#recommendLocation').append('<option value="Location"></option>');
+		for (var i = 0; i < libraryOptions.length; i++)
+		{
+			console.log(libraryOptions[i].name);
+			$('#recommendLocation').append($("<option/>").val(libraryOptions[i].name).text(libraryOptions[i].name));
+		}
+
+	},
+	'click #studentLifeOption': function()
+	{
+		$('#recommendLocation').find('option').remove();
+		console.log("you clicked student life.");
+		var options = $('#choices');
+
+		var studentLifeOptions = StudentLifeLocations.find().fetch();
+		console.log(studentLifeOptions);
+		$('#recommendLocation').append('<option value="Location"></option>');
+		for (var i = 0; i < studentLifeOptions.length; i++)
+		{
+			console.log(studentLifeOptions[i].name);
+			$('#recommendLocation').append($("<option/>").val(studentLifeOptions[i].name).text(studentLifeOptions[i].name));
+		}
+
 	}
+
 
 
 });
