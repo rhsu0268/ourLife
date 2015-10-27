@@ -460,19 +460,19 @@ Template.profile.rendered = function()
 	{
 		if (i % 4 == 0)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-success'>" + events[i].year + ": " + events[i].event + "</li>");
+			timelineSection.append("<li class='list-group-item list-group-item-success removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
 		}
 		else if (i % 4 == 1)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-info'>" + events[i].year + ": " + events[i].event + "</li>");
+			timelineSection.append("<li class='list-group-item list-group-item-info removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
 		}
 		else if (i % 4 == 2)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-warning'>" + events[i].year + ": " + events[i].event + "</li>");
+			timelineSection.append("<li class='list-group-item list-group-item-warning removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
 		}
 		else
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-danger'>" + events[i].year + ": " + events[i].event + "</li>");
+			timelineSection.append("<li class='list-group-item list-group-item-danger removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
 		}
 	}
 
@@ -505,12 +505,22 @@ Template.profile.rendered = function()
 
 		};
 
+
+
+
 		//console.log(ratingItem);
 
 		Session.set('selectedRating', ratingItem);
 		//var selectedRating = Session.get('selectedRating');
 		//console.log(selectedRating);
 
+
+	});
+
+
+	$('.removeItem').click(function() {
+		console.log("Remove clicked!");
+		console.log($(this).closest('li').html());
 
 	});
 
