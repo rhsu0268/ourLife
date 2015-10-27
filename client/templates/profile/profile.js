@@ -521,6 +521,45 @@ Template.profile.rendered = function()
 	$('.removeItem').click(function() {
 		console.log("Remove clicked!");
 		console.log($(this).closest('li').html());
+		var clickedEvent = $(this).closest('li');
+		clickedEvent.remove();
+
+		//console.log(clickedEvent);
+		var removeItemString = clickedEvent.text();
+		var firstSplit = removeItemString.split(":");
+		var year = firstSplit[0];
+		console.log(year);
+
+		var secondSplit = firstSplit[1].split("R");
+		var event = secondSplit[0].substr(1);
+		console.log(event);
+
+		// remove the event from the collection
+		var user = Meteor.users.findOne(Meteor.userId());
+		var userId = Meteor.userId();
+		var userTimeline = user.timeline;
+
+		var eventInfo = {
+			"year": year,
+			"event": event
+		};
+		for (var i = 0; i < userTimeline.length; i++)
+		{
+			if (userTimeline[i].year == year && userTimeline[i].event == event)
+			{
+				console.log("deleting item");
+				//user.timeline.splice(i, 1);
+
+				Meteor.call('removeTimelineEvent', eventInfo, userId, function(error, result) {
+
+					if (error)
+					{
+						return alert(error.reason);
+					}
+				});
+			}
+		}
+
 
 	});
 
