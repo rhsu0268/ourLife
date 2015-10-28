@@ -4,16 +4,10 @@
 			<label for="school">School</label>
 				<select class="form-control " id="school">
 				<option value=""></option>
-				<option value="School of Engineering and Applied Sciences">School of Engineering and Applied Sciences</option>
-				<option value="Elliott School of International Affairs">Elliott School of International Affairs</option>
-				<option value="Columbian College of Arts and Sciences">Columbian College of Arts and Sciences</option>
-				<option value="School of Medicine and Health Sciences">School of Medicine and Health Sciences</option>
-				<option value="GW Law">GW Law</option>
-				<option value="Graduate School of Education and Human Development">Graduate School of Education and Human Development</option>
-				<option value="School of Business">School of Business</option>
-				<option value="Milken School of Public Health">Milken School of Public Health</option>
-				<option value="College of Professional Studies">College of Professional Studies</option>
-				<option value="School of Nursing">School of Nursing</option>
+				
+				{{#each schoolList}}
+					<option value="{{title}}">{{title}}</option>
+				{{/each}}
 				</select>
 				<span class="help-block">{{errorMessage 'school'}}</span>
 		</div>
@@ -46,6 +40,6 @@
 			<span class="help-block">{{errorMessage 'comment'}}</span>
 		</div>
 		<input type="submit" value="Submit" class="btn btn-primary"/>
-		
+
 	</form>
 </template>

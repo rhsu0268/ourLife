@@ -10,7 +10,7 @@ Template.rateSchoolForm.events({
 		var schoolRating = {
 
 			school: selectedSchool,
-			category: $("#category").val(), 
+			category: $("#category").val(),
 			rating: $("#rating").val(),
 			comment: $("#comment").val()
 		};
@@ -33,13 +33,13 @@ Template.rateSchoolForm.events({
 			console.log(school);
 			console.log(school._id);
 
-			
+
 			Router.go('schoolItemPage', {_id: school._id});
 
 
 		});
 
-		
+
 	}
 
 
@@ -54,9 +54,14 @@ Template.rateSchoolForm.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('rateSchoolFormErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('rateSchoolFormErrors')[field] ? 'has-error' : '';
-  	}
+  },
+	schoolList: function()
+	{
+		console.log(Schools.find({}, {sort: {'title': 1}}));
+		return Schools.find({}, {sort: {'title': 1}});
+	}
 
 });

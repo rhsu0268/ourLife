@@ -473,12 +473,23 @@ Template.profile.helpers({
 	'getTitle': function()
 	{
 		var user = Meteor.users.findOne(Meteor.userId());
-		return user.title;
-	},
-	'getTitle': function()
-	{
-		var user = Meteor.users.findOne(Meteor.userId());
-		return user.title;
+		if (user.points >= 0 && user.points <= 100)
+		{
+			return "Junior Rater";
+		}
+		else if (user.points > 100 && user.points <= 500)
+		{
+			return "Intermediate Rater";
+		}
+		else if (user.points > 500 && user.points <= 1000)
+		{
+			return "Expert Rater";
+		}
+		else
+		{
+			return "Master Rater";
+		}
+
 	},
 	'getRatingsPosted': function()
 	{
