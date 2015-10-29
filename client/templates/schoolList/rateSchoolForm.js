@@ -22,6 +22,8 @@ Template.rateSchoolForm.events({
 			return Session.set('rateSchoolFormErrors', errors);
 		}
 
+		var user = Meteor.users.findOne(Meteor.userId());
+
 		Meteor.call('schoolRatingInsert', schoolRating, function(error, result) {
 			// display the error to the user and abort
 			if (error)
@@ -38,6 +40,7 @@ Template.rateSchoolForm.events({
 
 
 		});
+
 
 
 	}

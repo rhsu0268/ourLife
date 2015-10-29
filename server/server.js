@@ -77,6 +77,9 @@ Meteor.methods({
 	sendRating: function(to, toName, from, fromName, subject, text) {
 		check([to, toName, from, fromName, subject, text], [String]);
 
+		var user = Meteor.user();
+		Meteor.users.update({ "_id": user._id}, {$inc: {points: 5}});
+		Meteor.users.update({ "_id": user._id}, {$inc: {ratingsShared: 1}});
 		// let other Meteor methods run
 		this.unblock();
 
@@ -125,6 +128,10 @@ Meteor.methods({
 	},
 	'sendRecommendation': function(to, toName, from, fromName, subject, text) {
 		check([to, toName, from, fromName, subject, text], [String]);
+
+		var user = Meteor.user();
+		Meteor.users.update({ "_id": user._id}, {$inc: {points: 5}});
+		Meteor.users.update({ "_id": user._id}, {$inc: {ratingsRecommended: 1}});
 
 		// let other Meteor methods run
 		this.unblock();
