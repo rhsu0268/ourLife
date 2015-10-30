@@ -588,6 +588,19 @@ Template.profile.rendered = function()
 		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
 	}
 
+	$('#userSchoolRatings').click(function() {
+		$('#userRatings').find('tr').remove();
+
+		for (var j = 0; j < userSchoolRatings.length; j++)
+		{
+			console.log(userSchoolRatings[j]);
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
+		}
+
+
+
+	});
+
 	$('#userRatings').on('click', 'tbody tr', function(event) {
 
 		console.log("CLICKED");
