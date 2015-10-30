@@ -546,50 +546,24 @@ Template.profile.rendered = function()
 	var userSchoolRatings = SchoolRatings.find( {userId: Meteor.userId()} ).fetch();
 	console.log(userSchoolRatings);
 
-	for (var j = 0; j < userSchoolRatings.length; j++)
-	{
-		console.log(userSchoolRatings[j]);
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
-	}
 
 	var userHousingRatings = HousingRatings.find( {userId: Meteor.userId()} ).fetch();
 	console.log(userHousingRatings);
 
-	for (var j = 0; j < userHousingRatings.length; j++)
-	{
-		console.log(userHousingRatings[j]);
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userHousingRatings[j].housing + "</td><td class='category'>" + userHousingRatings[j].category + "</td><td class='rating'>" + userHousingRatings[j].rating + "</td><td class='comment'>" + userHousingRatings[j].comment + "</td></tr>");
-	}
-
 	var userDiningRatings = DiningRatings.find( {userId: Meteor.userId()} ).fetch();
 	console.log(userDiningRatings);
-
-	for (var j = 0; j < userDiningRatings.length; j++)
-	{
-		console.log(userDiningRatings[j]);
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userDiningRatings[j].dining + "</td><td class='category'>" + userDiningRatings[j].category + "</td><td class='rating'>" + userDiningRatings[j].rating + "</td><td class='comment'>" + userDiningRatings[j].comment + "</td></tr>");
-	}
 
 	var userLibraryRatings = LibraryRatings.find( {userId: Meteor.userId()} ).fetch();
 	console.log(userLibraryRatings);
 
-	for (var j = 0; j < userLibraryRatings.length; j++)
-	{
-		console.log(userLibraryRatings[j]);
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userLibraryRatings[j].library + "</td><td class='category'>" + userLibraryRatings[j].category + "</td><td class='rating'>" + userLibraryRatings[j].rating + "</td><td class='comment'>" + userLibraryRatings[j].comment + "</td></tr>");
-	}
-
 	var userStudentLifeRatings = StudentLifeRatings.find( {userId: Meteor.userId()} ).fetch();
 	console.log(userStudentLifeRatings);
 
-	for (var j = 0; j < userStudentLifeRatings.length; j++)
-	{
-		console.log(userStudentLifeRatings[j]);
-		$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
-	}
 
 	$('#userSchoolRatings').click(function() {
 		$('#userRatings').find('tr').remove();
+
+		$('#userRatings').append("<tr><td>Location</td><td>Category</td><td>Rating</td><td>Comment</td><td>Share</td></tr>");
 
 		for (var j = 0; j < userSchoolRatings.length; j++)
 		{
@@ -597,9 +571,60 @@ Template.profile.rendered = function()
 			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
 		}
 
+	});
 
+	$('#userHousingRatings').click(function() {
+		$('#userRatings').find('tr').remove();
+
+		$('#userRatings').append("<tr><td>Location</td><td>Category</td><td>Rating</td><td>Comment</td><td>Share</td></tr>");
+
+		for (var j = 0; j < userHousingRatings.length; j++)
+		{
+			console.log(userHousingRatings[j]);
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userHousingRatings[j].housing + "</td><td class='category'>" + userHousingRatings[j].category + "</td><td class='rating'>" + userHousingRatings[j].rating + "</td><td class='comment'>" + userHousingRatings[j].comment + "</td></tr>");
+		}
 
 	});
+
+	$('#userDiningRatings').click(function() {
+		$('#userRatings').find('tr').remove();
+
+		$('#userRatings').append("<tr><td>Location</td><td>Category</td><td>Rating</td><td>Comment</td><td>Share</td></tr>");
+
+		for (var j = 0; j < userDiningRatings.length; j++)
+		{
+			console.log(userDiningRatings[j]);
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userDiningRatings[j].dining + "</td><td class='category'>" + userDiningRatings[j].category + "</td><td class='rating'>" + userDiningRatings[j].rating + "</td><td class='comment'>" + userDiningRatings[j].comment + "</td></tr>");
+		}
+
+	});
+
+	$('#userLibraryRatings').click(function() {
+		$('#userRatings').find('tr').remove();
+
+		$('#userRatings').append("<tr><td>Location</td><td>Category</td><td>Rating</td><td>Comment</td><td>Share</td></tr>");
+
+		for (var j = 0; j < userLibraryRatings.length; j++)
+		{
+			console.log(userLibraryRatings[j]);
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userLibraryRatings[j].library + "</td><td class='category'>" + userLibraryRatings[j].category + "</td><td class='rating'>" + userLibraryRatings[j].rating + "</td><td class='comment'>" + userLibraryRatings[j].comment + "</td></tr>");
+		}
+
+	});
+
+	$('#userStudentLifeRatings').click(function() {
+		$('#userRatings').find('tr').remove();
+
+		$('#userRatings').append("<tr><td>Location</td><td>Category</td><td>Rating</td><td>Comment</td><td>Share</td></tr>");
+
+		for (var j = 0; j < userStudentLifeRatings.length; j++)
+		{
+			console.log(userStudentLifeRatings[j]);
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
+		}
+
+	});
+
 
 	$('#userRatings').on('click', 'tbody tr', function(event) {
 
