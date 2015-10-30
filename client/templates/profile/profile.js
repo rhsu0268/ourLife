@@ -130,7 +130,11 @@ Template.profile.events({
 		var timelineSection = $("#events ul");
 		timelineSection.append("<li class='list-group-item'>" + eventInfo.year + ": " + eventInfo.event + "</li>");
 
+		$('#eventYear').val("");
+		$('#event').val("");
+
 		});
+
 
 		$('#timeLine').modal('toggle');
 
@@ -224,6 +228,13 @@ Template.profile.events({
 			if (error) {
 				return alert(error.reason);
 			}
+			$('#recommend').modal('toggle');
+			$('#recommendRecipientName').val("");
+			$('#recommendRecipientEmail').val("");
+			$('#recommendLocation').val("");
+			$('#recommendMessage').val("");
+
+
 		});
 
 
