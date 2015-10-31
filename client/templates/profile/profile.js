@@ -538,19 +538,19 @@ Template.profile.rendered = function()
 	{
 		if (i % 4 == 0)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-success removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
+			timelineSection.append("<li class='list-group-item list-group-item-success'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs removeItem' style='float: right;'>Remove</button></li>");
 		}
 		else if (i % 4 == 1)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-info removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
+			timelineSection.append("<li class='list-group-item list-group-item-info'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs removeItem' style='float: right;'>Remove</button></li>");
 		}
 		else if (i % 4 == 2)
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-warning removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
+			timelineSection.append("<li class='list-group-item list-group-item-warning removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs removeItem' style='float: right;'>Remove</button></li>");
 		}
 		else
 		{
-			timelineSection.append("<li class='list-group-item list-group-item-danger removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button></li>");
+			timelineSection.append("<li class='list-group-item list-group-item-danger removeItem'>" + events[i].year + ": " + events[i].event + "<button type='button' class='btn btn-danger btn-xs removeItem' style='float: right;'>Remove</button></li>");
 		}
 	}
 
@@ -579,7 +579,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userSchoolRatings.length; j++)
 		{
 			console.log(userSchoolRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
 		}
 
 	});
