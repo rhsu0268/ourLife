@@ -637,8 +637,8 @@ Template.profile.rendered = function()
 	});
 
 
-	$('#userRatings').on('click', 'tbody tr', function(event) {
-
+	$('#userRatings').on('click', 'tbody tr:gt(0)', function(event) {
+	//$('#userRatings tbody tr').click(function() {
 		console.log("CLICKED");
 
 		$(".selected").remove();
