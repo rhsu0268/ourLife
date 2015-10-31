@@ -579,7 +579,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userSchoolRatings.length; j++)
 		{
 			console.log(userSchoolRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "<button type='button' class='btn btn-danger btn-xs' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userSchoolRatings[j].school + "<button type='button' class='btn btn-danger btn-xs removeSchoolRating' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userSchoolRatings[j].category + "</td><td class='rating'>" + userSchoolRatings[j].rating + "</td><td class='comment'>" + userSchoolRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -711,6 +711,55 @@ Template.profile.rendered = function()
 				});
 			}
 		}
+
+
+	});
+
+	$('#tableClick').on('click', '.removeSchoolRating', function() {
+		console.log("removeSchoolRating clicked!");
+		var selectedSchoolRating = $(this).closest('tr');
+		console.log(selectedSchoolRating);
+		var ratingSelected = $(this).closest('tr');
+		console.log(ratingSelected);
+		ratingSelected.remove();
+
+		//var ratingLocationCategory = "SCHOOL";
+		var locationRaw = selectedSchoolRating.find(".location").text();
+		var location = locationRaw.split("R");
+		console.log(location[0]);
+
+		var categoryRaw = selectedSchoolRating.find(".category").text();
+		var category = categoryRaw.split("R");
+		console.log(category[0]);
+
+		var ratingRaw = selectedSchoolRating.find(".rating").text();
+		var rating = ratingRaw.split("R");
+		console.log(rating[0]);
+
+		var commentRaw = selectedSchoolRating.find(".comment").text();
+		var comment = commentRaw.split("R");
+		console.log(comment[0]);
+
+		var selectedSchoolRating = {
+			"school": location[0],
+			"category": category[0],
+			"rating": rating[0],
+			"comment": comment[0]
+		};
+
+		var userId = Meteor.userId();
+
+		Meteor.call('removeSchoolRating', selectedSchoolRating, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+
+		});
+
+
 
 
 	});
