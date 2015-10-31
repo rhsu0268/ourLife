@@ -592,7 +592,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userHousingRatings.length; j++)
 		{
 			console.log(userHousingRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userHousingRatings[j].housing + "</td><td class='category'>" + userHousingRatings[j].category + "</td><td class='rating'>" + userHousingRatings[j].rating + "</td><td class='comment'>" + userHousingRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userHousingRatings[j].housing + "<button type='button' class='btn btn-danger btn-xs removeHousingRating' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userHousingRatings[j].category + "</td><td class='rating'>" + userHousingRatings[j].rating + "</td><td class='comment'>" + userHousingRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -761,6 +761,52 @@ Template.profile.rendered = function()
 
 
 
+
+	});
+
+	$('#tableClick').on('click', '.removeHousingRating', function() {
+		console.log("removeHousingRating clicked!");
+
+		var selectedHousingRating = $(this).closest('tr');
+		console.log(selectedHousingRating);
+		var ratingSelected = $(this).closest('tr');
+		console.log(ratingSelected);
+		ratingSelected.remove();
+
+		var locationRaw = selectedHousingRating.find(".location").text();
+		var location = locationRaw.split("R");
+		console.log(location[0]);
+
+		var categoryRaw = selectedHousingRating.find(".category").text();
+		var category = categoryRaw.split("R");
+		console.log(category[0]);
+
+		var ratingRaw = selectedHousingRating.find(".rating").text();
+		var rating = ratingRaw.split("R");
+		console.log(rating[0]);
+
+		var commentRaw = selectedHousingRating.find(".comment").text();
+		var comment = commentRaw.split("R");
+		console.log(comment[0]);
+
+		var selectedHousingRating = {
+			"housing": location[0],
+			"category": category[0],
+			"rating": rating[0],
+			"comment": comment[0]
+		};
+
+		var userId = Meteor.userId();
+
+		Meteor.call('removeHousingRating', selectedHousingRating, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+
+		});
 
 	});
 
