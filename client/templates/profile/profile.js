@@ -605,7 +605,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userDiningRatings.length; j++)
 		{
 			console.log(userDiningRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userDiningRatings[j].dining + "</td><td class='category'>" + userDiningRatings[j].category + "</td><td class='rating'>" + userDiningRatings[j].rating + "</td><td class='comment'>" + userDiningRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userDiningRatings[j].dining + "<button type='button' class='btn btn-danger btn-xs removeDiningRating' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userDiningRatings[j].category + "</td><td class='rating'>" + userDiningRatings[j].rating + "</td><td class='comment'>" + userDiningRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -618,7 +618,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userLibraryRatings.length; j++)
 		{
 			console.log(userLibraryRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userLibraryRatings[j].library + "</td><td class='category'>" + userLibraryRatings[j].category + "</td><td class='rating'>" + userLibraryRatings[j].rating + "</td><td class='comment'>" + userLibraryRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userLibraryRatings[j].library + "<button type='button' class='btn btn-danger btn-xs removeLibraryRating' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userLibraryRatings[j].category + "</td><td class='rating'>" + userLibraryRatings[j].rating + "</td><td class='comment'>" + userLibraryRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -631,7 +631,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userStudentLifeRatings.length; j++)
 		{
 			console.log(userStudentLifeRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "<button type='button' class='btn btn-danger btn-xs removeStudentLifeRating' style='float: right;'>Remove</button>" + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -809,6 +809,145 @@ Template.profile.rendered = function()
 		});
 
 	});
+
+	$('#tableClick').on('click', '.removeDiningRating', function() {
+		console.log("removeDiningRating clicked!");
+
+		var selectedDiningRating = $(this).closest('tr');
+		console.log(selectedDiningRating);
+		var ratingSelected = $(this).closest('tr');
+		console.log(ratingSelected);
+		ratingSelected.remove();
+
+		var locationRaw = selectedDiningRating.find(".location").text();
+		var location = locationRaw.split("R");
+		console.log(location[0]);
+
+		var categoryRaw = selectedDiningRating.find(".category").text();
+		var category = categoryRaw.split("R");
+		console.log(category[0]);
+
+		var ratingRaw = selectedDiningRating.find(".rating").text();
+		var rating = ratingRaw.split("R");
+		console.log(rating[0]);
+
+		var commentRaw = selectedDiningRating.find(".comment").text();
+		var comment = commentRaw.split("R");
+		console.log(comment[0]);
+
+		var selectedDiningRating = {
+			"dining": location[0],
+			"category": category[0],
+			"rating": rating[0],
+			"comment": comment[0]
+		};
+
+		var userId = Meteor.userId();
+
+		Meteor.call('removeDiningRating', selectedDiningRating, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+
+		});
+
+	});
+
+	$('#tableClick').on('click', '.removeLibraryRating', function() {
+		console.log("removeLibraryRating clicked!");
+
+		var selectedLibraryRating = $(this).closest('tr');
+		console.log(selectedLibraryRating);
+		var ratingSelected = $(this).closest('tr');
+		console.log(ratingSelected);
+		ratingSelected.remove();
+
+		var locationRaw = selectedLibraryRating.find(".location").text();
+		var location = locationRaw.split("R");
+		console.log(location[0]);
+
+		var categoryRaw = selectedLibraryRating.find(".category").text();
+		var category = categoryRaw.split("R");
+		console.log(category[0]);
+
+		var ratingRaw = selectedLibraryRating.find(".rating").text();
+		var rating = ratingRaw.split("R");
+		console.log(rating[0]);
+
+		var commentRaw = selectedLibraryRating.find(".comment").text();
+		var comment = commentRaw.split("R");
+		console.log(comment[0]);
+
+		var selectedLibraryRating = {
+			"library": location[0],
+			"category": category[0],
+			"rating": rating[0],
+			"comment": comment[0]
+		};
+
+		var userId = Meteor.userId();
+
+		Meteor.call('removeLibraryRating', selectedLibraryRating, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+
+		});
+
+	});
+
+	$('#tableClick').on('click', '.removeStudentLifeRating', function() {
+		console.log("removeStudentLifeRating clicked!");
+
+		var selectedStudentLifeRating = $(this).closest('tr');
+		console.log(selectedStudentLifeRating);
+		var ratingSelected = $(this).closest('tr');
+		console.log(ratingSelected);
+		ratingSelected.remove();
+
+		var locationRaw = selectedStudentLifeRating.find(".location").text();
+		var location = locationRaw.split("R");
+		console.log(location[0]);
+
+		var categoryRaw = selectedStudentLifeRating.find(".category").text();
+		var category = categoryRaw.split("R");
+		console.log(category[0]);
+
+		var ratingRaw = selectedStudentLifeRating.find(".rating").text();
+		var rating = ratingRaw.split("R");
+		console.log(rating[0]);
+
+		var commentRaw = selectedStudentLifeRating.find(".comment").text();
+		var comment = commentRaw.split("R");
+		console.log(comment[0]);
+
+		var selectedStudentLifeRating = {
+			"studentLife": location[0],
+			"category": category[0],
+			"rating": rating[0],
+			"comment": comment[0]
+		};
+
+		var userId = Meteor.userId();
+
+		Meteor.call('removeStudentLifeRating', selectedStudentLifeRating, userId, function(error, result) {
+
+			if (error)
+			{
+				return alert(error.reason);
+			}
+
+
+		});
+
+});
+
 
 }
 
