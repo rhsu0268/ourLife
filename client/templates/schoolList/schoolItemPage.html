@@ -13,28 +13,28 @@
 	   				<br>
 	   				<a href="#" class="upvote btn {{upVotedClass}}" id="upvoteSchoolRating">⬆</a>
 	   			</div>
-	  			
+
 	  				{{pluralize votes "Vote"}},
 	  				<br>
 	  				Submitted by {{author}},
 	  				<br>
 	    			Category: {{category}}: {{rating}}
 
-	    			{{#if equals rating 1}}
-					  &#9734;
-					{{/if}}
-	    			{{#if equals rating 2}}
-					  &#9734;&#9734;
-					{{/if}}
-	    			{{#if equals rating 3}}
-					  &#9734;&#9734;&#9734;
-					{{/if}}
-					{{#if equals rating 4}}
-					  &#9734;&#9734;&#9734;;&#9734;
-					{{/if}}
-					{{#if equals rating 5}}
-					  &#9734;&#9734;&#9734;;&#9734;;&#9734;
-					{{/if}}
+		    		{{#if equals rating 1}}
+						  &#9734;
+						{{/if}}
+		    		{{#if equals rating 2}}
+						  &#9734;&#9734;
+						{{/if}}
+		    			{{#if equals rating 3}}
+						  &#9734;&#9734;&#9734;
+						{{/if}}
+						{{#if equals rating 4}}
+						  &#9734;&#9734;&#9734;;&#9734;
+						{{/if}}
+						{{#if equals rating 5}}
+						  &#9734;&#9734;&#9734;;&#9734;;&#9734;
+						{{/if}}
 	  			</div>
 	  			<div class="panel-footer">{{comment}}</div>
 			</div>

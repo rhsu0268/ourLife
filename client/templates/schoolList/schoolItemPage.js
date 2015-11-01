@@ -11,14 +11,14 @@ Template.schoolItemPage.helpers({
    	console.log(SchoolRatings.find());
     return SchoolRatings.find( {school: selectedSchool.title}, {sort: {submitted: -1}} );
    },
- 
+
    idFromHelper: function() {
    	  return this._id;
-   }, 
+   },
    equals: function(a, b) {
 
       return a == b;
-   }, 
+   },
    upVotedClass: function() {
       var userId = Meteor.userId();
       if (userId && !_.include(this.upvoters, userId))
@@ -26,7 +26,7 @@ Template.schoolItemPage.helpers({
          console.log('btn-default');
          return 'btn-default';
       }
-      else 
+      else
       {
          return 'btn-primary';
       }
@@ -42,8 +42,8 @@ Template.schoolItemPage.events({
 	{
 		event.preventDefault();
 		Router.go('schoolList');
-	}, 
-   'click #upvoteSchoolRating': function(e) {
+	},
+  'click #upvoteSchoolRating': function(e) {
       e.preventDefault();
       console.log("You clicked the upvote Button!");
       Meteor.call('upvoteSchoolRating', this._id);
@@ -51,4 +51,3 @@ Template.schoolItemPage.events({
    }
 
 })
-
