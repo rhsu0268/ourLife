@@ -12,17 +12,17 @@
 						<div class="col-md-3">
 		   				<br>
 		   				<a href="#" class="upvote btn {{upVotedClass}}" id="upvoteHousingRating">⬆</a>
-		   			</div>
+		   				</div>
 
 						{{pluralize votes "Vote"}},
 						<br>
 						Submitted by {{author}},
 						<br>
-	    			Category: {{category}}: {{rating}}
+	    				Category: {{category}}: {{rating}}
 						{{#if equals rating 1}}
 						  &#9734;
 						{{/if}}
-		    		{{#if equals rating 2}}
+		    			{{#if equals rating 2}}
 						  &#9734;&#9734;
 						{{/if}}
 		    			{{#if equals rating 3}}
