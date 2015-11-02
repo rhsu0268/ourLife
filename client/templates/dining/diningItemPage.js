@@ -40,10 +40,9 @@ Template.diningItemPage.events({
 	},
     'click #upvoteDiningRating': function(e)
     {
-      e.preventDefault();
-      console.log("You clicked the upvote Button!");
-      Meteor.call('upvoteDiningRating', this._id);
-
-     }
+        e.preventDefault();
+        console.log("You clicked the upvote Button!");
+        Meteor.call('upvoteDiningRating', this._id);
+    }
 
 })

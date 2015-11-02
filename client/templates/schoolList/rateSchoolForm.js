@@ -60,7 +60,7 @@ Template.rateSchoolForm.helpers({
 	},
 	errorClass: function (field) {
     	return !!Session.get('rateSchoolFormErrors')[field] ? 'has-error' : '';
-  },
+  	},
 	schoolList: function()
 	{
 		console.log(Schools.find({}, {sort: {'title': 1}}));

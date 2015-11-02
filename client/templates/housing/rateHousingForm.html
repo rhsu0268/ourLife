@@ -4,26 +4,9 @@
 			<label for="housing">Housing</label>
 				<select class="form-control" id="housing">
 				<option value=""></option>
-				<option value="1959 E Street">1959 E Street</option>
-				<option value="2109 F Street">2109 F Street</option>
-				<option value="2206 F Street">2206 F Street</option>
-				<option value="Amsterdam Hall">Amsterdam Hall</option>
-				<option value="Building JJ">Building JJ</option>
-				<option value="City Hall">City Hall</option>
-				<option value="Francis Scott Key Hall">Francis Scott Key Hall</option>
-				<option value="Fulbright Hall">Fulbright Hall</option>
-				<option value="Guthridge Hall">Guthridge Hall</option>
-				<option value="International House">JBKO Hall</option>
-				<option value="Lafayette Hall">Lafayette Hall</option>
-				<option value="Madison Hall">Madison Hall</option>
-				<option value="Mitchell Hall">Mitchell Hall</option>
-				<option value="Munson Hall">Munson Hall</option>
-				<option value="Potomac House">Potomac House</option>
-				<option value="Shenkman Hall">Shenkman Hall</option>
-				<option value="South Hall">South Hall</option>
-				<option value="Strong Hall">Strong Hall</option>
-				<option value="The Dakota">The Dakota</option>
-				<option value="Thurston Hall">Thurston Hall</option>
+				{{#each housingList}}
+					<option value="{{title}}">{{title}}</option>
+				{{/each}}
 			</select>
 			<span class="help-block">{{errorMessage 'housing'}}</span>
 		</div>
@@ -56,6 +39,6 @@
 			<span class="help-block">{{errorMessage 'comment'}}</span>
 		</div>
 		<input type="submit" value="Submit" class="btn btn-primary"/>
-		
+
 	</form>
 </template>

@@ -4,56 +4,10 @@
 			<label for="dining">Dining Option</label>
 				<select class="form-control" id="dining">
 				<option value=""></option>
-				<option value="7-11">7-11</option>
-				<option value="Amorini Panini">Amorini Panini</option>
-				<option value="Aroma Indian Restaurant">Aroma Indian Restaurant</option>
-				<option value="Au Bon Pain">Au Bon Pain</option>
-				<option value="Baja Fresh">Baja Fresh</option>
-				<option value="Bertucci&#39;s">Bertucci&#39;s</option>
-				<option value="Bobby&#39;s Burger Palace">Bobby&#39;s Burger Palace</option>
-				<option value="Boloco">Boloco</option>
-				<option value="Bonmi">Bonmi</option>
-				<option value="Bourbon Coffee">Bourbon Coffee</option>
-				<option value="Bruegger&#39;s Bagel">Bruegger&#39;s Bagel</option>
-				<option value="Burger, Tap, and Shake">Burger, Tap, and Shake</option>
-				<option value="Cafe Istanbul">Cafe Instanbul</option>
-				<option value="Cafe Tu o Tu">Cafe Tu o Tu</option>
-				<option value="Carvings">Carvings</option>
-				<option value="Chalin">Chalin</option>
-				<option value="Chiptole">Chiptole</option>
-				<option value="Chop&#39;t">Chop&#39;t</option>
-				<option value="Crepeaway">Crepeaway</option>
-				<option value="Crepes N Creams">Crepes N Creams</option>
-				<option value="Custom Fuel Pizza">Custom Fuel Pizza</option>
-				<option value="Devon & Blakely">Devon & Blakely</option>
-				<option value="Domino&#39;s">Domino&#39;s</option>
-				<option value="Dunkin Donuts">Dunkin Donuts</option>
-				<option value="Farmer&#39;s Market">Farmer&#39;s Market</option>
-				<option value="FoBoGro">FoBoGro</option>
-				<option value="Froggy Bottom">Froggy Bottm</option>
-				<option value="frozenyo">frozenyo</option>
-				<option value="Gallery Place">Gallery Place</option>
-				<option value="GW Delicatessen">GW Delicatessen</option>
-				<option value="Johnny Rockets">Johnny Rockets</option>
-				<option value="Juan Valdez Cafe">Juan Valdez Cafe</option>
-				<option value="Kaz Sushi Bistro">Kaz Sushi Bistro</option>
-				<option value="Los Cuates">Los Cuates</option>
-				<option value="Manny & Olgas Pizza">Manny & Olgas Pizza</option>
-				<option value="Nick&#39;s Riverside Grill">Nick&#39;s Riverside Grill</option>
-				<option value="Papa John&#39;s">Papa John&#39;s</option>
-				<option value="Paul">Paul</option>
-				<option value="Pita Pit">Pita Pit</option>
-				<option value="Potbelly">Potbelly</option>
-				<option value="Roti">Roti</option>
-				<option value="Starbucks">Starbucks</option>
-				<option value="Subway">Subway</option>
-				<option value="sweetgreen">sweetgreen</option>
-				<option value="Tasty Kabob">Tasty Kabob</option>
-				<option value="Taylor">Taylor</option>
-				<option value="TGI Friday">TGI Friday</option>
-				<option value="The Perfect Pita">The Perfect Pita</option>
-				<option value="Tonic">Tonic</option>
-				<option value="WholeFoods">WholeFoods</option>
+				{{#each diningList}}
+					<option value="{{name}}">{{name}}</option>
+				{{/each}}
+			
 			</select>
 			<span class="help-block">{{errorMessage 'dining'}}</span>
 		</div>
@@ -86,6 +40,6 @@
 			<span class="help-block">{{errorMessage 'comment'}}</span>
 		</div>
 		<button type="button" class="btn btn-primary" id="submitRating">Submit</button>
-		
+
 	</form>
 </template>

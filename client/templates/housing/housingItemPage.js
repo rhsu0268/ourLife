@@ -30,7 +30,7 @@ Template.housingItemPage.helpers({
       }
 
 
-   }
+  }
 
 });
 

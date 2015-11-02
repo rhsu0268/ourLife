@@ -10,7 +10,7 @@ Template.rateHousingForm.events({
 		var housingRating = {
 
 			housing: selectedHousing,
-			category: $("#category").val(), 
+			category: $("#category").val(),
 			rating: $("#rating").val(),
 			comment: $("#comment").val()
 		};
@@ -33,13 +33,13 @@ Template.rateHousingForm.events({
 			console.log(housing);
 			console.log(housing._id);
 
-			
+
 			Router.go('housingItemPage', {_id: housing._id});
 
 
 		});
 
-		
+
 	}
 
 
@@ -54,9 +54,14 @@ Template.rateHousingForm.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('rateHousingFormErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('rateHousingFormErrors')[field] ? 'has-error' : '';
-  	}
+  	},
+    housingList: function()
+    {
+        console.log(Housings.find({}, {sort: {'title': 1}}));
+        return Housings.find({}, {sort: {'title': 1}});
+    }
 
 });

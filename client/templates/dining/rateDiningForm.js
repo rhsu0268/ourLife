@@ -9,7 +9,7 @@ Template.rateDiningForm.events({
 		var diningRating = {
 
 			dining: selectedDining,
-			category: $("#category").val(), 
+			category: $("#category").val(),
 			rating: $("#rating").val(),
 			comment: $("#comment").val()
 		};
@@ -32,7 +32,7 @@ Template.rateDiningForm.events({
 			console.log(dining);
 			console.log(dining._id);
 
-			
+
 			Router.go('diningItemPage', {_id: dining._id});
 
 
@@ -51,9 +51,14 @@ Template.rateDiningForm.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('rateDiningFormErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('rateDiningFormErrors')[field] ? 'has-error' : '';
-  	}
+  	},
+    diningList: function()
+    {
+        console.log(DiningLocations.find({}, {sort: {'title': 1}}).fetch());
+        return DiningLocations.find();
+    }
 
 });
