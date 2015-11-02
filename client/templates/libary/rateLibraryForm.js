@@ -9,7 +9,7 @@ Template.rateLibraryForm.events({
 		var libraryRating = {
 
 			library: selectedLibrary,
-			category: $("#category").val(), 
+			category: $("#category").val(),
 			rating: $("#rating").val(),
 			comment: $("#comment").val()
 		};
@@ -32,7 +32,7 @@ Template.rateLibraryForm.events({
 			console.log(library);
 			console.log(library._id);
 
-			
+
 			Router.go('libraryItemPage', {_id: library._id});
 
 
@@ -51,9 +51,14 @@ Template.rateLibraryForm.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('rateLibraryFormErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('rateLibraryFormErrors')[field] ? 'has-error' : '';
-  	}
+  	},
+	libraryList: function()
+    {
+        console.log(LibraryLocations.find({}, {sort: {'name': 1}}).fetch());
+        return LibraryLocations.find({}, {sort: {'name': 1}}).fetch();
+    }
 
 });

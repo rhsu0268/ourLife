@@ -4,9 +4,9 @@
 			<label for="library">Library</label>
 			<select class="form-control" id="library">
 				<option value=""></option>
-				<option value="Gelman Library">Gelman Libary</option>
-				<option value="Jacob Burns Law Library">Jacob Burns Law Library</option>
-				<option value="Himmelfarb Sciences Library">Himmelfarb Sciences Library</option>
+				{{#each libraryList}}
+					<option value="{{name}}">{{name}}</option>
+				{{/each}}
 			</select>
 			<span class="help-block">{{errorMessage 'library'}}</span>
 		</div>
