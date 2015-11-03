@@ -4,17 +4,9 @@
 			<label for="studentLife">Location</label>
 				<select class="form-control" id="studentLife">
 					<option value=""></option>
-					<option value="Marvin Center">Marvin Center</option>
-					<option value="Welcome Center">Welcome Center</option>
-					<option value="Colonial Health Center">Colonial Health Center</option>
-					<option value="Buff & Blue">Buff & Blue</option>
-					<option value="Charles E. Smith Center">Charles E. Smith Center</option>
-					<option value="Kogan Plaza">Kogan Plaza</option>
-					<option value="Heath & Wellness Center">Heath & Wellness Center</option>
-					<option value="Lisner Auditorium">Lisner Auditorium</option>
-					<option value="University Museum/TextileMuseum">University Museum/TextileMuseum</option>
-					<option value="Anniversary Park">Anniversary Park</option>
-					<option value="University Yard">University Yard</option>
+					{{#each studentLifeList}}
+						<option value="{{name}}">{{name}}</option>
+					{{/each}}
 				</select>
 				<span class="help-block">{{errorMessage 'studentLife'}}</span>
 		</div>

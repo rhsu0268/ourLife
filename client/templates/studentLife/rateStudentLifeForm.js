@@ -9,7 +9,7 @@ Template.rateStudentLifeForm.events({
 		var studentLifeRating = {
 
 			studentLife: selectedStudentLife,
-			category: $("#category").val(), 
+			category: $("#category").val(),
 			rating: $("#rating").val(),
 			comment: $("#comment").val()
 		};
@@ -33,7 +33,7 @@ Template.rateStudentLifeForm.events({
 			console.log(studentLife);
 			console.log(studentLife._id);
 
-			
+
 			Router.go('studentLifeItemPage', {_id: studentLife._id});
 
 
@@ -52,9 +52,14 @@ Template.rateStudentLifeForm.helpers({
 	errorMessage: function(field)
 	{
 		return Session.get('rateStudentLifeFormErrors')[field];
-	}, 
+	},
 	errorClass: function (field) {
     	return !!Session.get('rateStudentLifeFormErrors')[field] ? 'has-error' : '';
-  	}
+  	},
+	studentLifeList: function()
+    {
+        console.log(StudentLifeLocations.find({}, {sort: {'name': 1}}).fetch());
+        return StudentLifeLocations.find({}, {sort: {'name': 1}}).fetch();
+    }
 
 });

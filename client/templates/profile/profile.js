@@ -631,7 +631,7 @@ Template.profile.rendered = function()
 		for (var j = 0; j < userStudentLifeRatings.length; j++)
 		{
 			console.log(userStudentLifeRatings[j]);
-			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "</td><td class='category'>" + userStudentLifeRatings[j].category + "<button type='button' class='btn btn-danger btn-xs removeStudentLifeRating' style='float: right;'>Remove</button>" + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
+			$('#userRatings').append("<tr class='userRating'><td class='location'>" + userStudentLifeRatings[j].studentLife + "<button type='button' class='btn btn-danger btn-xs removeStudentLifeRating' style='float: right;'>Remove</button>" + "</td><td class='category'>" + userStudentLifeRatings[j].category + "</td><td class='rating'>" + userStudentLifeRatings[j].rating + "</td><td class='comment'>" + userStudentLifeRatings[j].comment + "</td></tr>");
 		}
 
 	});
@@ -930,8 +930,8 @@ Template.profile.rendered = function()
 		}
 		else
 		{
-			var category = categoryRaw.split("R");
-			console.log(rating[0]);
+			category = categoryRaw.split("R");
+			console.log(category[0]);
 		}
 
 		var ratingRaw = selectedStudentLifeRating.find(".rating").text();
