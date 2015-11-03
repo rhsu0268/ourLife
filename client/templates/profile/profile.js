@@ -916,8 +916,23 @@ Template.profile.rendered = function()
 		console.log(location[0]);
 
 		var categoryRaw = selectedStudentLifeRating.find(".category").text();
-		var category = categoryRaw.split("R");
-		console.log(category[0]);
+		console.log(categoryRaw);
+
+		var category;
+		if (categoryRaw[0] == 'R')
+		{
+			var choppedCategoryRaw = categoryRaw.substring(1, categoryRaw.length);
+			category = choppedCategoryRaw.split("R");
+
+			category[0] = "R" + category[0];
+			console.log(category[0]);
+
+		}
+		else
+		{
+			var category = categoryRaw.split("R");
+			console.log(rating[0]);
+		}
 
 		var ratingRaw = selectedStudentLifeRating.find(".rating").text();
 		var rating = ratingRaw.split("R");
@@ -933,6 +948,8 @@ Template.profile.rendered = function()
 			"rating": rating[0],
 			"comment": comment[0]
 		};
+
+		console.log(category[0]);
 
 		var userId = Meteor.userId();
 
