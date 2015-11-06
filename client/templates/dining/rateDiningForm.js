@@ -29,11 +29,20 @@ Template.rateDiningForm.events({
 			}
 
 			var dining = DiningLocations.findOne( {name: selectedDining} );
-			console.log(dining);
-			console.log(dining._id);
+			//console.log(dining);
+			//console.log(dining._id);
 
-
-			Router.go('diningItemPage', {_id: dining._id});
+			if (!dining)
+			{
+				console.log("Location is not in DiningLocation!");
+				dining = JStreetOptions.findOne( {name: selectedDining} );
+				console.log(dining);
+				Router.go('jStreetItemPage', {_id: dining._id});
+			}
+			else
+			{
+				Router.go('diningItemPage', {_id: dining._id});
+			}
 
 
 		});
@@ -59,6 +68,11 @@ Template.rateDiningForm.helpers({
     {
         console.log(DiningLocations.find({}, {sort: {'title': 1}}).fetch());
         return DiningLocations.find();
-    }
+    },
+	jStreetOptions: function()
+	{
+		console.log(DiningLocations.find({}, {sort: {'title': 1}}).fetch());
+        return JStreetOptions.find();
+	}
 
 });

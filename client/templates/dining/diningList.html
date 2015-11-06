@@ -16,7 +16,7 @@
           <img class="first-slide" src="/img/dining/J_Street.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              
+
               <p><a class="btn btn-lg btn-primary" href="http://gwcampusdining.com/" role="button">Visit</a></p>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <img class="second-slide" src="/img/dining/WholeFoods.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-    
+
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="http://www.wholefoodsmarket.com/" role="button">Visit</a></p>
             </div>
@@ -36,7 +36,7 @@
           <img class="second-slide" src="/img/dining/District_Commons_Restarunt.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-    
+
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="http://www.districtcommonsdc.com/district.html" role="button">Visit</a></p>
             </div>
@@ -48,7 +48,7 @@
             <div class="carousel-caption">
 
               <p></p>
-              
+
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <img class="second-slide" src="/img/dining/Founding_Farmers.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-  
+
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="http://www.wearefoundingfarmers.com/" role="button">Visit</a></p>
             </div>
@@ -79,7 +79,7 @@
           <div class="container">
             <div class="carousel-caption">
               <p></p>
-            
+
             </div>
           </div>
         </div>
@@ -92,8 +92,8 @@
             </div>
           </div>
         </div>
-       
-        
+
+
 
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -109,16 +109,26 @@
     <div class="container">
     <div class="row">
         <div class="col-md-6">
-          <h2>Other Ratings</h2>
-            <div class="schools">
-            {{#each dinings}}
-              {{> diningItem}}
-            {{/each}}
-        </div>
+			<div class="col-md-6">
+          		<h2>Other Ratings</h2>
+            	<div class="schools">
+            		{{#each dinings}}
+              			{{> diningItem}}
+            		{{/each}}
+        		</div>
+		  	</div>
+			<div class="col-md-6">
+          		<h2>J Street Options</h2>
+            	<div class="jStreet">
+            		{{#each jStreetOptions}}
+              			{{> jStreetItem}}
+            		{{/each}}
+        		</div>
+		  	</div>
         </div>
         <div class="col-md-6">
           <h2>Share a Rating Now!</h2>
-          
+
             {{> rateDiningForm}}
 
        </div>

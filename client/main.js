@@ -7,5 +7,6 @@ Meteor.subscribe('librarylocations');
 Meteor.subscribe('studentlifelocations');
 Meteor.subscribe('housingratings');
 Meteor.subscribe('diningratings');
+Meteor.subscribe('jstreetoptions');
 Meteor.subscribe('libraryratings');
 Meteor.subscribe('studentliferatings');

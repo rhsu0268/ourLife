@@ -7,7 +7,10 @@
 				{{#each diningList}}
 					<option value="{{name}}">{{name}}</option>
 				{{/each}}
-			
+				<option value=""></option>
+				{{#each jStreetOptions}}
+					<option value="{{name}}">{{name}}</option>
+				{{/each}}
 			</select>
 			<span class="help-block">{{errorMessage 'dining'}}</span>
 		</div>
