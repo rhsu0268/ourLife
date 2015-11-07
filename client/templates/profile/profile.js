@@ -980,6 +980,13 @@ Template.profile.helpers({
 	},
 	errorClass: function (field) {
     	return !!Session.get('formErrors')[field] ? 'has-error' : '';
-  	}
+  	},
+	welcomeUser: function()
+	{
+		var userId = Meteor.userId();
+		console.log(userId);
+		var user = Meteor.users.findOne(userId);
+		return user.username;
+	}
 
 });
