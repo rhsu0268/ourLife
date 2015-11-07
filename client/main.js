@@ -10,3 +10,4 @@ Meteor.subscribe('diningratings');
 Meteor.subscribe('jstreetoptions');
 Meteor.subscribe('libraryratings');
 Meteor.subscribe('studentliferatings');
+Meteor.subscribe('vernhousings');

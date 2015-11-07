@@ -30,12 +30,19 @@ Template.rateHousingForm.events({
 			}
 
 			var housing = Housings.findOne( {title: selectedHousing} );
-			console.log(housing);
-			console.log(housing._id);
+			//console.log(housing);
+			//console.log(housing._id);
 
-
-			Router.go('housingItemPage', {_id: housing._id});
-
+			if (!housing)
+			{
+				housing = VernHousings.findOne( {title: selectedHousing} );
+				console.log(housing);
+				Router.go('vernHousingItemPage', {_id: housing._id});
+			}
+			else
+			{
+				Router.go('housingItemPage', {_id: housing._id});
+			}
 
 		});
 
@@ -62,6 +69,10 @@ Template.rateHousingForm.helpers({
     {
         console.log(Housings.find({}, {sort: {'title': 1}}));
         return Housings.find({}, {sort: {'title': 1}});
-    }
+    },
+	vernHousingList: function()
+	{
+        return VernHousings.find({}, {sort: {'title': 1}});
+	}
 
 });

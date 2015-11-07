@@ -1,0 +1,45 @@
+<template name="vernHousingItemPage">
+	<div class="container">
+	   <div class="school-item-page page">
+	   	  <button type="button" class="btn btn-warning" id="back" style="float: right;">Go Back</button>
+	   	  <br>
+	      {{> vernHousingItem}}
+	   </div>
+	   <div>
+	   	{{#each vernhousingratings}}
+	   		<div class="panel panel-default">
+	  			<div class="panel-body">
+						<div class="col-md-3">
+		   				<br>
+		   				<a href="#" class="upvote btn {{upVotedClass}}" id="upvoteHousingRating">⬆</a>
+		   				</div>
+
+						{{pluralize votes "Vote"}},
+						<br>
+						Submitted by {{author}},
+						<br>
+	    				Category: {{category}}: {{rating}}
+						{{#if equals rating 1}}
+						  &#9734;
+						{{/if}}
+		    			{{#if equals rating 2}}
+						  &#9734;&#9734;
+						{{/if}}
+		    			{{#if equals rating 3}}
+						  &#9734;&#9734;&#9734;
+						{{/if}}
+						{{#if equals rating 4}}
+						  &#9734;&#9734;&#9734;;&#9734;
+						{{/if}}
+						{{#if equals rating 5}}
+						  &#9734;&#9734;&#9734;;&#9734;;&#9734;
+						{{/if}}
+
+
+	  			</div>
+	  			<div class="panel-footer">{{comment}}</div>
+			</div>
+	   	{{/each}}
+	   </div>
+	</div>
+</template>

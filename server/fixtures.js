@@ -747,6 +747,36 @@ if (Housings.find().count() == 0)
 
 }
 
+if (VernHousings.find().count() == 0)
+{
+    VernHousings.insert({
+        title: 'Merriweather Residence Hall',
+        url: 'http://living.gwu.edu/merriweather-hall'
+    });
+
+    VernHousings.insert({
+        title: 'Clark Residence Hall',
+        url: 'http://living.gwu.edu/clark-hall'
+    });
+
+    VernHousings.insert({
+        title: 'Hensley Residence Hall',
+        url: 'http://living.gwu.edu/hensley-hall'
+    });
+
+    VernHousings.insert({
+        title: 'West Hall',
+        url: 'http://living.gwu.edu/west-hall'
+    });
+
+    VernHousings.insert({
+        title: 'Somers Residence Hall',
+        url: 'http://living.gwu.edu/somers-hall'
+    });
+
+
+}
+
 if (DiningLocations.find().count() == 0)
 {
    DiningLocations.insert({

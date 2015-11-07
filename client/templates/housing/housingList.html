@@ -33,12 +33,12 @@
           <img class="first-slide" src="http://living.gwu.edu/sites/living.gwu.edu/files/image/gallery/Potomac_UP_2013-WLA_0433.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              
+
               <p><a class="btn btn-lg btn-primary" href="http://living.gwu.edu/" role="button">Visit</a></p>
             </div>
           </div>
         </div>
-       
+
         {{#each housings}}
           {{> housingImage}}
         {{/each}}
@@ -53,20 +53,31 @@
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
-	
+
 	<div class="container">
       <div class="row">
           <div class="col-md-6">
-            <h2>Other Ratings</h2>
-              <div class="schools">
-              {{#each housings}}
-                {{> housingItem}}
-              {{/each}}
-          </div>
+            <div class="col-md-6">
+                <h2>Foggy Bottom Housing</h2>
+                <div class="schools">
+                    {{#each housings}}
+                        {{> housingItem}}
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Mount Vernon Housing</h2>
+                    <div class="schools">
+                        {{#each vernHousings}}
+                            {{> vernHousingItem}}
+                        {{/each}}
+                    </div>
+            </div>
+
           </div>
           <div class="col-md-6">
             <h2>Share a Rating Now!</h2>
-            
+
             	{{> rateHousingForm}}
 
          </div>
