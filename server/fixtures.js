@@ -1246,6 +1246,13 @@ if (LibraryLocations.find().count() == 0)
       url: 'https://himmelfarb.gwu.edu/',
       image: '/img/library/medical.jpg'
    });
+
+   LibraryLocations.insert({
+       name: 'Eckles Memorial Library',
+       url: 'http://library.gwu.edu/eckles',
+       image: '/img/library/eckles.jpg'
+
+   });
 }
 
 if (StudentLifeLocations.find().count() == 0)
