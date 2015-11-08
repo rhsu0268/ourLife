@@ -55,6 +55,18 @@ Images.allow({
 
 Accounts.onCreateUser(function(options, user) {
 
+	/*
+	console.log(user.username);
+	console.log(Meteor.users.find().fetch());
+	var username = Meteor.users.findOne({"username": user.username});
+	console.log("Username: " + username);
+	if (username)
+	{
+		console.log("Username exists already");
+		throw new Meteor.Error(403, 'The username already exists!');
+		return;
+	}
+	*/
   	user.timeline = [];
 		user.points = 0;
 		user.title = "N/A";

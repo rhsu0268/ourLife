@@ -16,10 +16,18 @@ Accounts.validateLoginAttempt(function(attemptInfo) {
 
   if (attemptInfo.type == 'resume') return true;
 
-  if (attemptInfo.methodName == 'createUser') 
+  if (attemptInfo.methodName == 'createUser')
   {
-      throw new Meteor.Error(403, 'A Confirmation Email Was Sent!')
+
+      if (!attemptInfo.user) {
+
+          throw new Meteor.Error(403, 'Username exists already! Choose another!');
+          return false;
+      }
+      throw new Meteor.Error(403, 'A Confirmation Email Was Sent!');
       return false;
+
+
   }
 
   if (attemptInfo.methodName == 'login' && attemptInfo.allowed) {
@@ -63,5 +71,12 @@ Accounts.sendResetPasswordEmail = function (userId, email) {
   }});
 }
 */
-
-
+/*
+Accounts.validateNewUser(function (user) {
+  if (user.username.length < 5)
+  {
+    throw new Meteor.Error(403, "Username must have at least 3 characters");
+  }
+  return true;
+});
+*/
