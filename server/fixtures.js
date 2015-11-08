@@ -45,6 +45,12 @@ if (Schools.find().count() == 0)
    });
 
    Schools.insert({
+       title: 'School of Media and Public Affairs',
+       url: 'http://smpa.gwu.edu/',
+       image: '/img/schools/media.jpg'
+   });
+
+   Schools.insert({
    	title: 'Milken School of Public Health',
    	url: 'http://publichealth.gwu.edu/',
    	image: '/img/schools/milken.jpg'
@@ -582,7 +588,7 @@ if (CampusLocations.find().count() == 0)
       type: 'other',
       lat: 38.897689,
       lng: -77.044701,
-      description: 'The F Street House is a history building that is home to GW&#39; 16th President, Steven Knaff, and his wife, Diane Robinson Knapp.'
+      description: 'The F Street House is a history building that is home to GW&#39;s 16th President, Steven Knaff, and his wife, Diane Robinson Knapp.'
    });
 
    CampusLocations.insert({
@@ -608,6 +614,112 @@ if (CampusLocations.find().count() == 0)
       lng: -77.051693,
       description: 'Formerly a hotel, City Hall offers apartment-style living for third and fourth-year students as well as being home to several university offices.'
    });
+
+   // Vern Locations
+   CampusLocations.insert({
+       location: 'Merriweather Hall',
+       type: 'dorm',
+       lat: 38.918873,
+       lng: -77.090166,
+       description: 'Merriweather Hall, an all-female first-year and upperclass student living option on Mount Vernon campus, has a maximum occupancy of 43 students in mainly double bedrooms with adjoined bathrooms.'
+
+   });
+
+   CampusLocations.insert({
+       location: 'Clark Hall',
+       type: 'dorm',
+       lat: 38.918873,
+       lng: -77.090166,
+       description: 'Clark Hall, a predominately first-year student co-ed living option on the Mount Vernon campus, offers students traditional style double suites with shared bathrooms.'
+
+   });
+
+   CampusLocations.insert({
+       location: 'Hensley Hall',
+       type: 'dorm',
+       lat: 38.918809,
+       lng: -77.089608,
+       description: 'Hensley Hall, a predominately first-year co-ed living option on the Mount Vernon campus, has a maximum occupancy of 39 students in a combination of single rooms with a community bathroom, double rooms with a community bathroom, double suites with shared bathrooms. This intimate community is one of GW&#39;s best opportunities to say you know everyone who lives in your hall.'
+   });
+
+   CampusLocations.insert({
+       location: 'Eckles Memorial Library',
+       type: 'library',
+       lat: 38.918118,
+       lng: -77.089271,
+       description: 'Eckles library provides  comfortable, relaxed environment for study, award-winning staff for research help and free tutoring to help students excel.'
+   });
+
+   CampusLocations.insert({
+       location: 'Academic Building/Post Hall',
+       type: 'school',
+       lat: 38.918314,
+       lng: -77.09019,
+       description: 'Mount Vernon&#39;s Academic Building is home to several classroomsthat are used fora wide variety of undergraduate courses. Post Hall, located just inside the building, is one of the most elegant spaces on campus, and it has been the site of concerts, receptions, and special guest speakers.'
+
+   });
+
+   CampusLocations.insert({
+       location: 'Acheson Science Center',
+       type: 'school',
+       lat: 38.917783,
+       lng: -77.090219,
+       description: 'Located on the Mount Vernon Campus, the Acheson Science Center features state-of-the-art science laboratories and classrooms. The center is used by classes and labs in the biology and forensic sciences programs.'
+
+   });
+
+   CampusLocations.insert({
+       location: 'Webb Building',
+       type: 'school',
+       lat: 38.918286,
+       lng: -77.0906,
+       description: 'The Webb Building is considered the hub of the Mount Vernon campus and is the office for our team. The Webb Building houses several administrative offices, but it is also often utilized for special events and meetings.'
+   });
+
+   CampusLocations.insert({
+       location: 'Athletic Field',
+       type: 'recreation',
+       lat: 38.918204,
+       lng: -77.091237,
+       description: 'The Mount Vernon Field is home to GW&#39;s Men&#39;s and Women&#39; Soccer and Women&#39;s Lacrosse. The field has also hosted both the Atlantic 10 Conference Men&#39;s Soccer Championship and the Atlantic 10 Conference Women&#39;s Lacrosse Championship.'
+   });
+
+   CampusLocations.insert({
+       location: 'West Hall',
+       type: 'dorm',
+       lat: 38.9174,
+       lng: -77.092017,
+       description: 'West Hall opened in the Fall of 2010 as George Washington University’s first LEED residence hall and campus life center on the Mount Vernon campus. West Hall houses 287 first-year and upperclass students, in single and double bedrooms in 4-person units.'
+   });
+
+   CampusLocations.insert({
+       location: 'Tennis Courts',
+       type: 'recreation',
+       lat: 38.917218,
+       lng: -77.091057,
+       description: 'The GW Tennis Center on the Mount Vernon Campus is open to all students and is the home of GW Men#39;s and Women#39;s Tennis.'
+   });
+
+   CampusLocations.insert({
+       location: 'Ames Hall',
+       type: 'dining',
+       lat: 38.917384,
+       lng: -77.089813,
+       description: 'This newly renovated building is home to several academic classrooms, study rooms, a café and the skyboxes that overlook the softball field. Our skyboxes are one of our most popular spaces and are often used for receptions and other intimate events.'
+   });
+
+   CampusLocations.insert({
+       location: 'Somers Hall',
+       type: 'dorm',
+       lat: 38.917731,
+       lng: -77.089103,
+       description: 'Somers Hall, a first-year student coed living option on the Mount Vernon campus, has a maximum occupancy of 246 students in single rooms, double suites with shared bathrooms and double rooms.'
+   });
+
+
+
+
+
 
 }
 
@@ -1352,6 +1464,13 @@ if (StudentLifeLocations.find().count() == 0)
       name: 'University Yard',
       url: 'https://www.gwu.edu/campus-landmarks',
       image: '/img/studentLife/University_Yard.jpg'
+   });
+
+   StudentLifeLocations.insert({
+       name: 'GW Hatchet',
+       url: 'http://www.gwhatchet.com/',
+       image: '/img/studentLife/hatchet.jpg'
+
    });
 
 
