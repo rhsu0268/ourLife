@@ -38,7 +38,7 @@ a .dropdown-toggle
 .btn-default:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritence from `body` */
-  
+
   background-color: #fff;
   /*border: 1px solid #fff;*/
 }
@@ -99,7 +99,7 @@ a .dropdown-toggle
   border-bottom-color: #fff;
 }
 
-.modal-title 
+.modal-title
 {
   color: black;
 }
@@ -108,4 +108,3 @@ a .dropdown-toggle
 {
   color: black;
 }
-
