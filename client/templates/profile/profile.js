@@ -648,15 +648,17 @@ Template.profile.rendered = function()
 
 		$(this).append("<td class='selected'><button type='button' class='btn btn-info share' data-toggle='modal' data-target='#shareRating'>Share</button></td>");
 
+		var locationRaw = $(this).find("td.location").text();
+		var location = locationRaw.split("R");
+
 		var ratingItem = {
 
-			location: $(this).find(".location").html(),
+			location: location[0],
 			category: $(this).find(".category").html(),
 			rating: $(this).find(".rating").html(),
 			comment: $(this).find(".comment").html()
 
 		};
-
 
 
 
