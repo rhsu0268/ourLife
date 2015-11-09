@@ -716,6 +716,21 @@ if (CampusLocations.find().count() == 0)
        description: 'Somers Hall, a first-year student coed living option on the Mount Vernon campus, has a maximum occupancy of 246 students in single rooms, double suites with shared bathrooms and double rooms.'
    });
 
+   CampusLocations.insert({
+       location: 'Softball Field',
+       type: 'recreation',
+       lat: 38.917008,
+       lng: -77.089534,
+       description: 'The Mount Vernon Softball Field is home to GW Softball.'
+   });
+
+   CampusLocations.insert({
+       location: 'Lloyd Gymnasium',
+       type: 'recreation',
+       lat: 38.916749,
+       lng: -77.090306,
+       description: 'The Lloyd Gynasium/Dance & Exercise studio serve the health and wellness needs of the Mount Vernon Campus.'
+   });
 
 
 
@@ -862,17 +877,17 @@ if (Housings.find().count() == 0)
 if (VernHousings.find().count() == 0)
 {
     VernHousings.insert({
-        title: 'Merriweather Residence Hall',
+        title: 'Merriweather Hall',
         url: 'http://living.gwu.edu/merriweather-hall'
     });
 
     VernHousings.insert({
-        title: 'Clark Residence Hall',
+        title: 'Clark Hall',
         url: 'http://living.gwu.edu/clark-hall'
     });
 
     VernHousings.insert({
-        title: 'Hensley Residence Hall',
+        title: 'Hensley Hall',
         url: 'http://living.gwu.edu/hensley-hall'
     });
 
@@ -882,7 +897,7 @@ if (VernHousings.find().count() == 0)
     });
 
     VernHousings.insert({
-        title: 'Somers Residence Hall',
+        title: 'Somers \Hall',
         url: 'http://living.gwu.edu/somers-hall'
     });
 
