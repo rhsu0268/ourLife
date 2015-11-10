@@ -177,7 +177,7 @@ Template.profile.events({
 
 		var messageTitle = "A friend has just shared a rating with you!";
 		var message = "I was at the " + rating.location + ", and I want to give a rating on " + rating.category + "." +
-			"<br>" + "The score is " + rating.rating + " out of 5 and my comment is the following: " + rating.comment;
+			"<br><br>" + "The score is " + rating.rating + " out of 5 and my comment is the following: " + "<br><br>" + rating.comment;
 
 		// call sendEmail method
 
@@ -219,8 +219,7 @@ Template.profile.events({
 		console.log(userEmail);
 
 		var messageTitle = "A friend has just recommended a location with you!";
-		var message = "I want to recommend the " + location + " to you."
-		+ "Here is what I have to say: " + "<br><br>" + message;
+		var message = "I want to recommend the " + location + " to you. Here is what I have to say: " + "<br><br>" + message;
 
 		Meteor.call('sendRecommendation', recipientEmail, recipientName, userEmail, userName, messageTitle, message, function(error, result) {
 
