@@ -43,9 +43,11 @@
             {{/if}}
           </ul>
           <ul class="nav navbar-nav navbar-right">
+			{{#if currentUser}}
 			<li>
 		 		<a href="{{pathFor 'feedback'}}">Feedback</a>
 			</li>
+			{{/if}}
             <li>
               <a>{{> loginButtons}}</a>
             </li>
